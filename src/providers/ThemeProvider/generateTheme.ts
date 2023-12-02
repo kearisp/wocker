@@ -90,6 +90,9 @@ export const generateTheme = (mode: "light" | "dark"): ThemeOptions => {
             },
             h3: {
                 fontSize: "1.3em"
+            },
+            h4: {
+                fontSize: "1.2em"
             }
         }
     };

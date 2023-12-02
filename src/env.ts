@@ -10,10 +10,12 @@ export const ROUTES = {
     installation: "/get-started/installation",
     usage: "/get-started/usage",
     projectInit: "/project/init",
-    projectConfig: "/project/config",
     projectStart: "/project/start",
     projectManagement: "/project/management",
     projectDomains: "/project/domains",
+    configEnv: "/project/env",
+    buildArgs: "/project/build-args",
+    presetPhpApache: "/presets/php-apache",
     pluginsCustom: "/plugins/custom",
     pluginsProxy: "/plugins/proxy",
     pluginsMariadb: "/plugins/mariadb",
@@ -54,12 +56,26 @@ export const MENU: MenuItem[] = [
                 to: ROUTES.projectManagement
             },
             {
-                label: "menu.config",
-                to: ROUTES.projectConfig
+                label: "menu.build-args",
+                to: ROUTES.buildArgs
+            },
+            {
+                label: "menu.env",
+                to: ROUTES.configEnv
             },
             {
                 label: "menu.domains",
                 to: ROUTES.projectDomains
+            }
+        ]
+    },
+    {
+        label: "menu.presets",
+        to: "/presets",
+        children: [
+            {
+                label: "menu.preset-php-apache",
+                to: ROUTES.presetPhpApache
             }
         ]
     },

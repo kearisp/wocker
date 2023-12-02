@@ -28,8 +28,10 @@ const App: React.FC = () => {
                             <Route path={ROUTES.overview} element={<MarkdownScreen path="get-started/overview" />} />
                             <Route path={ROUTES.projectInit} element={<MarkdownScreen path="projects/init" />} />
                             <Route path={ROUTES.projectManagement} element={<MarkdownScreen path="projects/management" />} />
-                            <Route path={ROUTES.projectConfig} element={<MarkdownScreen path="projects/config" />} />
                             <Route path={ROUTES.projectDomains} element={<MarkdownScreen path="projects/domains" />} />
+                            <Route path={ROUTES.buildArgs} element={<MarkdownScreen path="projects/build-arg" />} />
+                            <Route path={ROUTES.configEnv} element={<MarkdownScreen path="projects/env" />} />
+                            <Route path={ROUTES.presetPhpApache} element={<MarkdownScreen path="presets/php-apache" />} />
                             <Route path={ROUTES.pluginsProxy} element={<MarkdownScreen path="plugins/proxy" />} />
                             <Route path={ROUTES.pluginsMariadb} element={<MarkdownScreen path="plugins/mariadb" />} />
                             <Route path={ROUTES.pluginsServeo} element={<MarkdownScreen path="plugins/serveo" />} />
