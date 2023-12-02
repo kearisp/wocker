@@ -1,0 +1,22 @@
+{
+    "language": {
+        "en": "Англійська",
+        "ua": "Українська"
+    },
+    "menu": {
+        "build-args": "Build Args",
+        "config": "Конфігурація",
+        "custom-plugin": "Створення",
+        "domains": "Домени",
+        "env": "Environment",
+        "get-started": "Початок",
+        "initialization": "Ініціалізація",
+        "installation": "Інсталяція",
+        "overview": "Огляд",
+        "plugins": "Плагіни",
+        "preset-php-apache": "Php apache",
+        "presets": "Пресети",
+        "project-management": "Керування",
+        "projects": "Проєкти"
+    }
+}
