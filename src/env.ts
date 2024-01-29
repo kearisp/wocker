@@ -18,6 +18,7 @@ export const ROUTES = {
     presetPhpApache: "/presets/php-apache",
     pluginsCustom: "/plugins/custom",
     pluginsProxy: "/plugins/proxy",
+    pluginsCron: "/plugins/cron",
     pluginsMariadb: "/plugins/mariadb",
     pluginsServeo: "/plugins/serveo",
 };
@@ -86,6 +87,10 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.proxy",
                 to: ROUTES.pluginsProxy
+            },
+            {
+                label: "menu.cron",
+                to: ROUTES.pluginsCron
             },
             {
                 label: "menu.mariadb",
