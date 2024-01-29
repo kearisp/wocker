@@ -6,6 +6,7 @@
     "menu": {
         "build-args": "Build Args",
         "config": "Config",
+        "cron": "Cron",
         "custom-plugin": "Custom",
         "domains": "Domains",
         "env": "Environment",
@@ -15,8 +16,8 @@
         "mariadb": "Mariadb",
         "overview": "Overview",
         "plugins": "Plugins",
-        "presets": "Presets",
         "preset-php-apache": "Php Apache",
+        "presets": "Presets",
         "project-management": "Management",
         "projects": "Projects",
         "proxy": "Proxy",
