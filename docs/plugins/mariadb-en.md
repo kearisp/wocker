@@ -2,19 +2,66 @@
 
 ## Installation
 
-To access the following services within the workspace, please add the following entries to your hosts file:
+The following command installs the MariaDB plugin:
+
+```shell
+ws plugin:add mariadb
+```
+
+After installation, you need to add the following line to the **hosts** file:
 
 ```text
-127.0.0.1 maildev.workspace
 127.0.0.1 dbadmin-mariadb.workspace
 ```
 
+This host will show phpmyadmin. Phpmyadmin will be automatically started when `ws mariadb:start` is executed and disabled when `ws mariadb:stop` is executed for the last service.
 
-## Start Mariadb
+
+## Commands
 
 ```shell
-ws maridb:start
+ws mariadb [service]
+ws mariadb:create <service>
+ws mariadb:destroy <service>
+ws mariadb:use <service>
+ws mariadb:start [service]
+ws mariadb:backup [service]
+ws mariadb:dump [database]
 ```
+
+
+## Creating a service
+
+```shell
+ws mariadb:create <service> --user=root --password=root
+```
+
+_user_ - user name
+
+_password_ - password
+
+_host_ - the host for the external instance
+
+> ⚠
+
+
+## Deleting a service
+
+> ⚠ All created databases will also be deleted.
+
+```shell
+ws mariadb:destroy <service>
+```
+
+
+## Starting MariaDB
+
+```shell
+ws maridb:start [service]
+```
+
+Will be started the service with the following container name: `mariadb-[service].ws`
+
 
 ## Backup db
 
