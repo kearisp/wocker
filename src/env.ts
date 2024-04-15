@@ -21,6 +21,9 @@ export const ROUTES = {
     pluginsCron: "/plugins/cron",
     pluginsMariadb: "/plugins/mariadb",
     pluginsServeo: "/plugins/serveo",
+    pluginsNgrok: "/plugins/ngrok",
+    pluginsRedis: "/plugins/redis",
+    pluginsPgsql: "/plugins/pgsql"
 };
 
 type MenuItem = {
@@ -99,6 +102,18 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.serveo",
                 to: ROUTES.pluginsServeo
+            },
+            {
+                label: "menu.ngrok",
+                to: ROUTES.pluginsNgrok
+            },
+            {
+                label: "menu.redis",
+                to: ROUTES.pluginsRedis
+            },
+            {
+                label: "menu.pgsql",
+                to: ROUTES.pluginsPgsql
             },
             {
                 label: "menu.custom-plugin",

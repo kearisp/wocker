@@ -21,6 +21,9 @@
         "project-management": "Management",
         "projects": "Projects",
         "proxy": "Proxy",
-        "serveo": "Serveo"
+        "serveo": "Serveo",
+        "ngrok": "Ngrok",
+        "redis": "Redis",
+        "pgsql": "Postgres"
     }
 }
