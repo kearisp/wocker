@@ -54,7 +54,7 @@ ws mariadb:destroy <service>
 ```
 
 
-## Starting MariaDB
+## Starting service
 
 ```shell
 ws maridb:start [service]
@@ -63,33 +63,53 @@ ws maridb:start [service]
 Will be started the service with the following container name: `mariadb-[service].ws`
 
 
-## Backup db
+## Backup
 
-The `mariadb:backup` command is used to create a backup of a MariaDB database.
+A backup in the plugin's sense is nothing more than just the result of the `mysqldump` (`mariadb-dump`) command, but the dump file will be saved in the plugin directory for later recovery.
+The `mariadb:backup` command can be used to create a MariaDB database backup.
 
 ```shell
-ws mariadb:backup [database]
+ws mariadb:backup [service] --database=dbname --filename=filename
 ```
+
+_service_ - mariadb instance name
+
+_filename_ - the name of the file under which the database dump will be created, if you do not specify a name, then the name of the dump file will be specified automatically based on the current time:
+- ``yyyy-MM-dd HH-mm``.
+
+_database_ - the name of the database for which you need to create a backup.
+
+If the name of the database is omitted, the command line interface asks for the name of the database:
+
+```shell
+$ ws mariadb:backup example
+? Database:  (Use arrow keys)
+❯ example_database1
+  example_database2
+  example_database3
+```
+
 
 ### Backup Location
 
 The backup file will be saved in the following directory:
 
-> $WS_DIR/plugins/mariadb/dump/**\[dbname]**/yyyy-MM-dd HH-mm.sql
+> ${WS_DIR}/plugins/mariadb/dump/**\[service]**/**\[dbname]**/**\[filename]**.sql
 
 
 ### Delete backup
 
-The `mariadb:delete-backup` command will remove file from `$WS_DIR` directory.
+The `mariadb:backup -D` command will remove file from `$WS_DIR` directory.
 
 ```shell
-ws mariadb:delete-backup [database] [filename]
+ws mariadb:backup -D [database] [filename]
 ```
+
 
 ## Dump
 
 The `mariadb:dump` command is used to dump a MariaDB database to a file.
 
 ```shell
-ws mairadb:dump [database] > dump.sql
+ws mariadb:dump [service] -d dbname > dump.sql
 ```

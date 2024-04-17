@@ -54,7 +54,7 @@ ws mariadb:destroy <service>
 ```
 
 
-## Запуск сервісу MariaDB
+## Запуск сервісу
 
 ```shell
 ws mariadb:start [service]
@@ -82,7 +82,7 @@ _database_ - назва бази даних для якої необхідно �
 При пропуску назви бд інтерфейс командного рядка запитає назву бд:
 
 ```shell
-$ ws mariadb:backup
+$ ws mariadb:backup example
 ? Database:  (Use arrow keys)
 ❯ example_database1
   example_database2
@@ -94,21 +94,22 @@ $ ws mariadb:backup
 
 Файли з бекапами будуть збережені у наступну директорію:
 
-> ${WS_DIR}/plugins/mariadb/dump/**\[dbname]**/**\[filename]**.sql
+> ${WS_DIR}/plugins/mariadb/dump/**\[service]**/**\[dbname]**/**\[filename]**.sql
 
 
 ### Delete backup
 
-The `mariadb:delete-backup` command will remove file from `$WS_DIR` directory.
+The `mariadb:backup -D` command will remove file from `$WS_DIR` directory.
 
 ```shell
-ws mariadb:backup -d [database] [filename]
+ws mariadb:backup -D [service]
 ```
+
 
 ## Dump
 
 The `mariadb:dump` command is used to dump a MariaDB database to a file.
 
 ```shell
-ws mariadb:dump [database] > dump.sql
+ws mariadb:dump [service] -d dbname > dump.sql
 ```
