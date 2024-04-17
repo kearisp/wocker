@@ -9,6 +9,17 @@
 ws plugin:add serveo
 ```
 
+
+## Commands
+
+```shell
+ws serveo:init
+ws serveo:start
+ws serveo:stop
+ws serveo:logs
+```
+
+
 ## Налаштування
 
 Перейдіть у директорію з вашим проєктом.
