@@ -7,6 +7,7 @@
 
 Команди для керування списком доменів створені для зручного керування вмістом env змінної `VIRTUAL_HOST`.
 
+
 ```shell
 ws domains
 ws domain:add <domain> [...domains]
@@ -48,11 +49,13 @@ ws domain:add example.workspace
 127.0.0.1 example.workspace
 ```
 
+
 ## Видалення домену
 
 ```shell
 ws domain:remove example.workspace
 ```
+
 
 ## Видалення всіх доменів
 
