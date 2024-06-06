@@ -1,5 +1,7 @@
 # Environment
 
+It is possible to add environment variables for each project.
+
 ```shell
 ws config
 ws config:get <KEY> [...KEYS]
@@ -41,4 +43,3 @@ $ ws config:set KEY=value KEY2=value2
 ```shell
 $ ws config:unset KEY1 KEY2
 ```
-

@@ -5,6 +5,7 @@
 ws init
 ```
 
+
 ## Створення проєкту
 
 Спочатку, потрібно перейти у відповідну директорію проєкту:
@@ -13,7 +14,7 @@ ws init
 $ cd ~/project-dir
 ```
 
-У відповідній директорії `ws init`
+У відповідній директорії виконайте команду `ws init`:
 
 ```shell
 $ ws init
@@ -40,8 +41,6 @@ $ ws init
 
 
 #### Dockerfile
-
-Інтерфейс 
 
 ```shell
 ? Project type:  Dockerfile
@@ -71,4 +70,4 @@ $ ws init
 
 ## Наступні кроки
 
-- [proxy](/plugins/proxy)
+- [Керування проєктами](/projects/management)
