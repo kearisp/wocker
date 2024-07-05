@@ -1,8 +1,5 @@
 # Ngrok
 
-
-## Installation
-
-```shell
-ws plugin:add ngrok
-```
+> ⚠ **Plugin is deprecated**
+>
+> See [Rproxy](/plugins/rproxy)

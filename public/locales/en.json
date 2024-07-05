@@ -24,6 +24,8 @@
         "serveo": "Serveo",
         "ngrok": "Ngrok",
         "redis": "Redis",
-        "pgsql": "Postgres"
+        "pgsql": "Postgres",
+        "rproxy": "RProxy",
+        "maildev": "MailDev"
     }
 }
