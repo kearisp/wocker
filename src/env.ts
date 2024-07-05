@@ -1,5 +1,7 @@
 import * as Path from "path-browserify";
 
+import {MenuItem} from "./types";
+
 
 export const PUBLIC_PATH = process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_URL, window.location.href).pathname : "/";
 export const DOCS_URL = process.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, "/docs");
@@ -23,13 +25,10 @@ export const ROUTES = {
     pluginsServeo: "/plugins/serveo",
     pluginsNgrok: "/plugins/ngrok",
     pluginsRedis: "/plugins/redis",
-    pluginsPgsql: "/plugins/pgsql"
-};
-
-type MenuItem = {
-    label: string;
-    to: string;
-    children?: MenuItem[];
+    pluginsPgsql: "/plugins/pgsql",
+    pluginsRProxy: "/plugins/rproxy",
+    pluginsMailDev: "/plugins/maildev",
+    pluginsDns: "/plugins/dns"
 };
 
 export const MENU: MenuItem[] = [
@@ -91,6 +90,10 @@ export const MENU: MenuItem[] = [
                 label: "menu.proxy",
                 to: ROUTES.pluginsProxy
             },
+            // {
+            //     label: "menu.dns",
+            //     to: ROUTES.pluginsDns
+            // },
             {
                 label: "menu.cron",
                 to: ROUTES.pluginsCron
@@ -100,11 +103,18 @@ export const MENU: MenuItem[] = [
                 to: ROUTES.pluginsMariadb
             },
             {
+                label: "menu.rproxy",
+                new: true,
+                to: ROUTES.pluginsRProxy
+            },
+            {
                 label: "menu.serveo",
+                deprecated: true,
                 to: ROUTES.pluginsServeo
             },
             {
                 label: "menu.ngrok",
+                deprecated: true,
                 to: ROUTES.pluginsNgrok
             },
             {
@@ -114,6 +124,11 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.pgsql",
                 to: ROUTES.pluginsPgsql
+            },
+            {
+                label: "menu.maildev",
+                new: true,
+                to: ROUTES.pluginsMailDev
             },
             {
                 label: "menu.custom-plugin",

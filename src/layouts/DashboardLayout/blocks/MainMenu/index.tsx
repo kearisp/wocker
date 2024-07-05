@@ -7,7 +7,8 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    Collapse
+    Collapse,
+    Chip
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 
@@ -71,8 +72,10 @@ const MainMenu: React.FC<Props> = (props) => {
           disablePadding={isChild}>
             {items.map((item, index) => {
                 const {
-                    label,
+                    label = "",
                     children,
+                    new: isNew,
+                    deprecated: isDeprecated,
                     to
                 } = item;
 
@@ -93,9 +96,28 @@ const MainMenu: React.FC<Props> = (props) => {
                                 handleToggle(index);
                             }
                           }}>
-                            <ListItemText primary={t(label)} />
+                            <ListItemText
+                              primary={
+                                <React.Fragment>
+                                    {t(label)}
+                                </React.Fragment>
+                              } />
 
                             <ListItemIcon>
+                                {isNew && (
+                                    <Chip
+                                      color="success"
+                                      size="small"
+                                      label="new" />
+                                )}
+
+                                {isDeprecated && (
+                                    <Chip
+                                      color="warning"
+                                      size="small"
+                                      label="deprecated" />
+                                )}
+
                                 {children && children.length > 0 && (
                                     <ArrowRightIcon
                                       sx={{

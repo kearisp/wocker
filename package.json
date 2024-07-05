@@ -6,9 +6,6 @@
     "license": "MIT",
     "main": "index.js",
     "type": "module",
-    "workspaces": [
-        "packages/*"
-    ],
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
@@ -29,10 +26,7 @@
         "react-dom": "^18.2.0",
         "react-i18next": "^13.3.1",
         "react-router-dom": "^6.16.0",
-        "react-scripts": "^5.0.1",
-        "react-syntax-highlighter": "^15.5.0",
-        "sass": "^1.68.0",
-        "typescript": "^4.9.5"
+        "react-syntax-highlighter": "^15.5.0"
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -41,13 +35,23 @@
         "@types/path-browserify": "^1.0.0",
         "@types/react": "^18.2.22",
         "@types/react-dom": "^18.2.7",
-        "@types/react-syntax-highlighter": "^15.5.10"
+        "@types/react-syntax-highlighter": "^15.5.10",
+        "react-scripts": "^5.0.1",
+        "sass": "^1.77.8",
+        "typescript": "^5.5.3"
     },
     "eslintConfig": {
         "extends": [
             "react-app",
             "react-app/jest"
         ]
+    },
+    "overrides": {
+        "react-scripts": {
+            "@svgr/webpack": "latest",
+            "typescript": "latest",
+            "resolve-url-loader": "latest"
+        }
     },
     "browserslist": {
         "production": [
