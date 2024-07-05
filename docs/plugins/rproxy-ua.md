@@ -1,6 +1,6 @@
 # RProxy
 
-Плагін запускає може працювати з [ngrok](https://ngrok.com), [serveo.net](https://serveo.net) або [localtunnel](https://theboroer.github.io/localtunnel-www), з його допомогою ви зможете створити тунель для проєкту.
+Плагін може працювати з [ngrok](https://ngrok.com), [serveo.net](https://serveo.net) або [localtunnel](https://theboroer.github.io/localtunnel-www), з його допомогою ви зможете створити тунель для проєкту.
 
 
 ## Commands
