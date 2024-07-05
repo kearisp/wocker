@@ -1,6 +1,6 @@
 # RProxy
 
-The launcher plugin can work with [ngrok](https://ngrok.com), [serveo.net](https://serveo.net) or [localtunnel](https://theboroer.github.io/localtunnel-www), with its help you can create a tunnel for the project.
+The launcher plugin can work with [ngrok](https://ngrok.com), [serveo.net](https://serveo.net) or [localtunnel](https://theboroer.github.io/localtunnel-www), using it you can create a tunnel for the project.
 
 
 ## Commands
