@@ -25,6 +25,7 @@
         "ngrok": "Ngrok",
         "redis": "Redis",
         "pgsql": "Postgres",
-        "rproxy": "RProxy"
+        "rproxy": "RProxy",
+        "maildev": "MailDev"
     }
 }
