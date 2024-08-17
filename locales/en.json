@@ -26,6 +26,7 @@
         "redis": "Redis",
         "pgsql": "Postgres",
         "rproxy": "RProxy",
-        "maildev": "MailDev"
+        "maildev": "MailDev",
+        "dns": "DNS"
     }
 }
