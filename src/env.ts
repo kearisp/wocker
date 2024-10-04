@@ -7,28 +7,7 @@ export const PUBLIC_PATH = process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_U
 export const DOCS_URL = process.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, "/docs");
 
 export const ROUTES = {
-    home: "/",
-    overview: "/get-started/overview",
-    installation: "/get-started/installation",
-    usage: "/get-started/usage",
-    projectInit: "/project/init",
-    projectStart: "/project/start",
-    projectManagement: "/project/management",
-    projectDomains: "/project/domains",
-    configEnv: "/project/env",
-    buildArgs: "/project/build-args",
-    presetPhpApache: "/presets/php-apache",
-    pluginsCustom: "/plugins/custom",
-    pluginsProxy: "/plugins/proxy",
-    pluginsCron: "/plugins/cron",
-    pluginsMariadb: "/plugins/mariadb",
-    pluginsServeo: "/plugins/serveo",
-    pluginsNgrok: "/plugins/ngrok",
-    pluginsRedis: "/plugins/redis",
-    pluginsPgsql: "/plugins/pgsql",
-    pluginsRProxy: "/plugins/rproxy",
-    pluginsMailDev: "/plugins/maildev",
-    pluginsDns: "/plugins/dns"
+    home: "/"
 };
 
 export const MENU: MenuItem[] = [
@@ -38,11 +17,11 @@ export const MENU: MenuItem[] = [
         children: [
             {
                 label: "menu.overview",
-                to: ROUTES.overview
+                to: "/get-started/overview"
             },
             {
                 label: "menu.installation",
-                to: ROUTES.installation
+                to: "/get-started/installation"
             }
         ]
     },
@@ -52,23 +31,23 @@ export const MENU: MenuItem[] = [
         children: [
             {
                 label: "menu.initialization",
-                to: ROUTES.projectInit
+                to: "/project/init"
             },
             {
                 label: "menu.project-management",
-                to: ROUTES.projectManagement
+                to: "/project/management"
             },
             {
                 label: "menu.build-args",
-                to: ROUTES.buildArgs
+                to: "/project/build-args"
             },
             {
                 label: "menu.env",
-                to: ROUTES.configEnv
+                to: "/project/env"
             },
             {
                 label: "menu.domains",
-                to: ROUTES.projectDomains
+                to: "/project/domains"
             }
         ]
     },
@@ -78,8 +57,12 @@ export const MENU: MenuItem[] = [
         children: [
             {
                 label: "menu.preset-php-apache",
-                to: ROUTES.presetPhpApache
-            }
+                to: "/presets/php-apache"
+            },
+            // {
+            //     label: "menu.preset-custom",
+            //     to: "/presets/custom"
+            // }
         ]
     },
     {
@@ -88,51 +71,47 @@ export const MENU: MenuItem[] = [
         children: [
             {
                 label: "menu.proxy",
-                to: ROUTES.pluginsProxy
+                to: "/plugins/proxy"
             },
-            // {
-            //     label: "menu.dns",
-            //     to: ROUTES.pluginsDns
-            // },
             {
                 label: "menu.cron",
-                to: ROUTES.pluginsCron
+                to: "/plugins/cron"
             },
             {
                 label: "menu.mariadb",
-                to: ROUTES.pluginsMariadb
+                to: "/plugins/mariadb"
             },
             {
                 label: "menu.rproxy",
                 new: true,
-                to: ROUTES.pluginsRProxy
+                to: "/plugins/rproxy"
             },
             {
                 label: "menu.serveo",
                 deprecated: true,
-                to: ROUTES.pluginsServeo
+                to: "/plugins/serveo"
             },
             {
                 label: "menu.ngrok",
                 deprecated: true,
-                to: ROUTES.pluginsNgrok
+                to: "/plugins/ngrok"
             },
             {
                 label: "menu.redis",
-                to: ROUTES.pluginsRedis
+                to: "/plugins/redis"
             },
             {
                 label: "menu.pgsql",
-                to: ROUTES.pluginsPgsql
+                to: "/plugins/pgsql"
             },
             {
                 label: "menu.maildev",
                 new: true,
-                to: ROUTES.pluginsMailDev
+                to: "/plugins/maildev"
             },
             {
                 label: "menu.custom-plugin",
-                to: ROUTES.pluginsCustom
+                to: "/plugins/custom"
             }
         ]
     }
