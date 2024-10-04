@@ -27,6 +27,6 @@
         "pgsql": "Postgres",
         "rproxy": "RProxy",
         "maildev": "MailDev",
-        "dns": "DNS"
+        "preset-custom": "Custom"
     }
 }
