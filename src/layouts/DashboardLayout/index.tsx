@@ -62,10 +62,10 @@ const DashboardLayout: React.FC<Props> = (props) => {
                     <img
                       style={{
                         marginRight: 8,
-                        height: 40
+                        height: 32
                       }}
                       alt="WS"
-                      src={asset("img.png")} />
+                      src={asset("favicon-32x32.png")} />
 
                     <Typography
                       sx={{
