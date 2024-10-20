@@ -110,6 +110,11 @@ export const MENU: MenuItem[] = [
                 to: "/plugins/maildev"
             },
             {
+                label: "menu.storage",
+                new: true,
+                to: "/plugins/storage"
+            },
+            {
                 label: "menu.custom-plugin",
                 to: "/plugins/custom"
             }
