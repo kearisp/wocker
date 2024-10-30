@@ -1,8 +1,6 @@
 # Storage
 
 
-> ⚠ Coming soon with Wocker 1.0.19
-
 ## Commands
 
 ```shell
