@@ -27,6 +27,7 @@
         "pgsql": "Postgres",
         "rproxy": "RProxy",
         "maildev": "MailDev",
+        "ssl": "SSL",
         "preset-custom": "Custom",
         "storage": "Storage"
     }

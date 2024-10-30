@@ -48,6 +48,10 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.domains",
                 to: "/project/domains"
+            },
+            {
+                label: "menu.ssl",
+                to: "/project/ssl"
             }
         ]
     },
