@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkwocker_docs=self.webpackChunkwocker_docs||[]).push([[490],{8490:(e,s,c)=>{c.r(s),c.d(s,{default:()=>a});c(5043);var d=c(1272),k=c(579);const a=()=>(0,k.jsx)(d.Oq,{path:"index.md"})}}]);
-//# sourceMappingURL=490.cfacedb8.chunk.js.map
