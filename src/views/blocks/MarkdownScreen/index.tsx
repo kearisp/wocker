@@ -2,9 +2,8 @@ import React, {useState, useMemo, useEffect} from "react";
 import * as Path from "path-browserify";
 import {useTranslation} from "react-i18next";
 
-import {DOCS_URL} from "../../env";
-import {titleToId} from "../../utils";
-import {Markdown} from "../Markdown";
+import {DOCS_URL} from "../../../env";
+import {Markdown, titleToId} from "../Markdown";
 import {TableOfContents} from "../TableOfContents";
 
 

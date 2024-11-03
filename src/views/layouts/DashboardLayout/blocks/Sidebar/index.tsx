@@ -1,6 +1,6 @@
 import React from "react";
 
-import {MENU} from "../../../../env";
+import {MENU} from "../../../../../env";
 import {MainMenu} from "../MainMenu";
 
 

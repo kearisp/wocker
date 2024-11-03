@@ -5,11 +5,10 @@ import * as Path from "path-browserify";
 
 import {PUBLIC_PATH} from "../env";
 
-
 i18n.use(Backend).use(initReactI18next).init({
     lng: localStorage.getItem("lang") || "ua",
     fallbackLng: "en",
-    debug: true,
+    debug: process.env.NODE_ENV === "development",
     backend: {
         loadPath: Path.join(PUBLIC_PATH, "/locales/{{lng}}.json")
     },

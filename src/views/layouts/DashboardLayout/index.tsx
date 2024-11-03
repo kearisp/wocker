@@ -15,8 +15,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import {ROUTES} from "../../env";
-import {asset} from "../../utils";
+import {ROUTES} from "../../../env";
+import {asset} from "../../../utils";
 import {Sidebar, ThemeToggle} from "./blocks";
 
 

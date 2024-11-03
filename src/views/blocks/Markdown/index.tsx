@@ -2,7 +2,7 @@ import React, {useMemo} from "react";
 import MarkdownJSX from "markdown-to-jsx";
 import Typography from "@mui/material/Typography";
 
-import {titleToId} from "../../utils";
+import {titleToId} from "./utils";
 import {A, Blockquote, Code, CodeBlock, H, Pre} from "./blocks";
 
 
@@ -83,4 +83,4 @@ const Markdown: React.FC<Props> = (props) => {
 };
 
 
-export {Markdown};
+export {titleToId, Markdown};

@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 
-import {MenuItem} from "../../../../types";
-import {useMatchPath} from "../../../../hooks";
+import {MenuItem} from "../../../../../types";
+import {useMatchPath} from "../../../../../hooks";
 import "./index.scss";
 
 
