@@ -18,14 +18,16 @@ ws crontab -r
 ```
 
 
-## Запуск cron
+## Запуск cron сервісу
+
+У crontab сервісу буде автоматично додаватися crontab запущених проєктів.
 
 ```shell
 ws cron:start
 ```
 
 
-## Зупинка cron
+## Зупинка cron сервісу
 
 ```shell
 ws cron:stop
@@ -37,4 +39,3 @@ ws cron:stop
 ```shell
 ws crontab -e
 ```
-

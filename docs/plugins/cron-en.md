@@ -19,7 +19,9 @@ ws crontab -r
 ```
 
 
-## Start cron
+## Starting cron service
+
+The crontab of running projects will be automatically added to the crontab service.
 
 ```shell
 ws cron:start
@@ -31,4 +33,3 @@ ws cron:start
 ```shell
 ws cron:stop
 ```
-
