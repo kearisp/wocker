@@ -69,4 +69,4 @@ $ ws rproxy:init
 
 ## Start/Stop
 
-When activated, the reverse proxy will start every time the [project is started](/project/management#starting-project) and stop automatically every time the [project is stopped](/project/management#stopping-project).
+When activated, the reverse proxy will start every time the [project is started](/docs/project/management#starting-project) and stop automatically every time the [project is stopped](/project/management#stopping-project).

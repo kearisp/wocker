@@ -1,5 +1,6 @@
 import {lazy} from "react";
 
 
+export const BlogPage = lazy(() => import("./BlogPage"));
 export const HomePage = lazy(() => import("./HomePage"));
-export const DocksPage = lazy(() => import("./DocksPage"));
+export const DocsPage = lazy(() => import("./DocsPage"));

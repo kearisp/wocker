@@ -18,10 +18,10 @@ pnpm add -g @wocker/ws
 
 </codeblock>
 
-## Project initialisation
 
+## Ініціалізація проєкту
 
-[``ws init``](/project/init)
+Після інсталяції необхідно запустити команду [``ws init``](/docs/project/init) з директорії вашого проєкту.
 
 
 

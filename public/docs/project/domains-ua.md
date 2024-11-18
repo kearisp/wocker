@@ -3,7 +3,7 @@
 ## Опис
 
 Логіка доменів працює на базі образу `nginxproxy/nginx-proxy`.
-При наявності [env](/project/config) змінних `VIRTUAL_HOST` та `VIRTUAL_PORT` у контейнері, [proxy](/plugins/proxy) буде автоматично перенаправляти запит у відповідний контейнер.
+При наявності [env](/docs/project/config) змінних `VIRTUAL_HOST` та `VIRTUAL_PORT` у контейнері, [proxy](/docs/plugins/proxy) буде автоматично перенаправляти запит у відповідний контейнер.
 
 Команди для керування списком доменів створені для зручного керування вмістом env змінної `VIRTUAL_HOST`.
 

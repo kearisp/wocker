@@ -1,3 +1,3 @@
-# Wocker
+# Docs
 
-[@wocker/ws](https://www.npmjs.com/package/@wocker/ws)
+
