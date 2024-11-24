@@ -28,7 +28,9 @@
         "rproxy": "RProxy",
         "maildev": "MailDev",
         "ssl": "SSL",
+        "preset-node": "Node",
         "preset-custom": "Custom",
-        "storage": "Storage"
+        "storage": "Storage",
+        "mongodb": "Mongodb"
     }
 }
