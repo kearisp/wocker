@@ -1,7 +1,5 @@
 # MongoDB
 
-> ⚠ Coming soon
-
 ## Команди
 
 ```shell
