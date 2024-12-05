@@ -4,6 +4,8 @@
         "ua": "Ukrainian"
     },
     "menu": {
+        "blog": "Blog",
+        "docs": "Docs",
         "build-args": "Build Args",
         "config": "Config",
         "cron": "Cron",

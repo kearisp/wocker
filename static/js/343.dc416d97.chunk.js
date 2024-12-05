@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwocker_docs=self.webpackChunkwocker_docs||[]).push([[343],{1343:(e,s,t)=>{t.r(s),t.d(s,{default:()=>h});t(5043);var c=t(3216),n=t(5545),a=t(579);const h=()=>{const{pathname:e}=(0,c.zy)();return(0,a.jsxs)(c.BV,{children:[(0,a.jsx)(c.qh,{index:!0,element:(0,a.jsx)(c.C5,{replace:!0,to:"/docs/installation"})}),(0,a.jsx)(c.qh,{path:"*",element:(0,a.jsx)(n.Oq,{path:e})})]})}}}]);
+//# sourceMappingURL=343.dc416d97.chunk.js.map

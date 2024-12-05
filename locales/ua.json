@@ -4,6 +4,8 @@
         "ua": "Українська"
     },
     "menu": {
+        "blog": "Блог",
+        "docs": "Docs",
         "build-args": "Build Args",
         "config": "Конфігурація",
         "custom-plugin": "Створення",
