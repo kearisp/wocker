@@ -19,6 +19,6 @@ Wocker дозволяє запускати проєкти локально як 
 - [docker](https://www.docker.com)
 
 
-## [Блог](/blog)
+## Блог
 
 - [Під'єднання бази даних до phpstorm](/blog/posts/1)
