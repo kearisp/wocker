@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/wocker/static/css/main.05383304.css",
-    "main.js": "/wocker/static/js/main.a6d44b03.js",
+    "main.js": "/wocker/static/js/main.75e8221a.js",
     "static/js/334.60d43058.chunk.js": "/wocker/static/js/334.60d43058.chunk.js",
     "static/js/763.03e9589c.chunk.js": "/wocker/static/js/763.03e9589c.chunk.js",
     "static/js/343.dc416d97.chunk.js": "/wocker/static/js/343.dc416d97.chunk.js",
     "index.html": "/wocker/index.html",
     "static/media/getFetch.cjs": "/wocker/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
     "main.05383304.css.map": "/wocker/static/css/main.05383304.css.map",
-    "main.a6d44b03.js.map": "/wocker/static/js/main.a6d44b03.js.map",
+    "main.75e8221a.js.map": "/wocker/static/js/main.75e8221a.js.map",
     "334.60d43058.chunk.js.map": "/wocker/static/js/334.60d43058.chunk.js.map",
     "763.03e9589c.chunk.js.map": "/wocker/static/js/763.03e9589c.chunk.js.map",
     "343.dc416d97.chunk.js.map": "/wocker/static/js/343.dc416d97.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05383304.css",
-    "static/js/main.a6d44b03.js"
+    "static/js/main.75e8221a.js"
   ]
 }
