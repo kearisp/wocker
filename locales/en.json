@@ -4,6 +4,7 @@
         "ua": "Ukrainian"
     },
     "menu": {
+        "ollama": "Ollama",
         "blog": "Blog",
         "docs": "Docs",
         "build-args": "Build Args",
