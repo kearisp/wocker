@@ -1,5 +1,11 @@
 # Memcached
 
+## Installation
+
+```shell
+ws plugin:add memcached
+```
+
 ## Commands
 
 ```shell
