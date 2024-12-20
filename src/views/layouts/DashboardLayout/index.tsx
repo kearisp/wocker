@@ -4,6 +4,8 @@ import {useTranslation} from "react-i18next";
 import {
     AppBar,
     Toolbar,
+    Grid,
+    Button,
     Box,
     Select,
     SelectChangeEvent,
@@ -15,9 +17,9 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import {ROUTES} from "../../../env";
+import {ROUTES, HEADER_MENU} from "../../../env";
 import {asset} from "../../../utils";
-import {Sidebar, ThemeToggle} from "./blocks";
+import {ThemeToggle} from "./blocks";
 
 
 type Props = PropsWithChildren;
@@ -28,7 +30,7 @@ const DashboardLayout: React.FC<Props> = (props) => {
     } = props;
 
     const theme = useTheme();
-    const [, i18n] = useTranslation();
+    const [t, i18n] = useTranslation();
 
     // i18n.language
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -69,7 +71,7 @@ const DashboardLayout: React.FC<Props> = (props) => {
 
                     <Typography
                       sx={{
-                        flexGrow: 1,
+                        flexGrow: 0,
                         display: {
                             xs: "none",
                             sm: "block"
@@ -85,6 +87,26 @@ const DashboardLayout: React.FC<Props> = (props) => {
                       to={ROUTES.home}>
                         Wocker
                     </Typography>
+
+                    <Grid sx={{flex: 1}} />
+
+                    {HEADER_MENU.map((menuItem, index: number) => {
+                        const {
+                            label,
+                            to
+                        } = menuItem;
+
+                        return (
+                            <Button
+                              key={index}
+                              component={Link}
+                              variant="text"
+                              color="inherit"
+                              to={to}>
+                                {t(label as any)}
+                            </Button>
+                        );
+                    })}
 
                     <ThemeToggle />
 
@@ -106,12 +128,6 @@ const DashboardLayout: React.FC<Props> = (props) => {
                 "--wocker-header-height": "64px"
               }}
               display="flex">
-                {!isMobile && (
-                    <Box sx={{width: 220, flexBasis: 220, minWidth: 220}}>
-                        <Sidebar />
-                    </Box>
-                )}
-
                 <Box flex={1}>
                     {children}
                 </Box>

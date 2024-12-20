@@ -1,4 +1,7 @@
-# Огляд
+# Wocker
+
+[@wocker/ws](https://www.npmjs.com/package/@wocker/ws)
+
 
 ## Що таке Wocker?
 
@@ -14,3 +17,8 @@ Wocker дозволяє запускати проєкти локально як 
 
 - [node.js](https://nodejs.org)
 - [docker](https://www.docker.com)
+
+
+## Блог
+
+- [Під'єднання бази даних до phpstorm](/blog/posts/2)

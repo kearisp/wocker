@@ -70,4 +70,4 @@ With the help of presets, it is possible to deploy projects with preset settings
 
 ## Next steps
 
-- [Project Management](/projects/management)
+- [Project Management](/docs/project/management)

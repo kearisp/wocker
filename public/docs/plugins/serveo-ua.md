@@ -2,4 +2,4 @@
 
 > ⚠ **Plugin is deprecated**
 >
-> See [Rproxy](/plugins/rproxy)
+> See [Rproxy](/docs/plugins/rproxy)

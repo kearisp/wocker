@@ -1,13 +1,30 @@
 import React, {Suspense} from "react";
-import {BrowserRouter, Routes, Route, Outlet} from "react-router-dom";
+import {useLocation, BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
 
 import {PUBLIC_PATH, ROUTES} from "../env";
 import {LoadingScreen} from "./blocks";
-import {HomePage, DocksPage} from "./pages";
-import {DashboardLayout} from "./layouts";
+import {HomePage, BlogPage, DocsPage} from "./pages";
+import {DashboardLayout, DocsLayout} from "./layouts";
 import {ThemeProvider} from "./providers";
 import "./App.scss";
 
+
+const escape = (str: string) => {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
+const DocsNavigate = () => {
+    const {pathname} = useLocation();
+    let path = pathname;
+
+    if(PUBLIC_PATH !== "/") {
+        path = path.replace(new RegExp(`^${escape(PUBLIC_PATH)}`), "");
+    }
+
+    return (
+        <Navigate replace to={`${ROUTES.docs}${path}`} />
+    );
+};
 
 const App: React.FC = () => {
     return (
@@ -22,7 +39,16 @@ const App: React.FC = () => {
                             </DashboardLayout>
                           }>
                             <Route path={ROUTES.home} element={<HomePage />} />
-                            <Route path="*" element={<DocksPage />} />
+                            <Route path={`${ROUTES.blog}/*`} element={<BlogPage />} />
+                            <Route
+                              element={
+                                <DocsLayout>
+                                    <Outlet />
+                                </DocsLayout>
+                              }>
+                                <Route path={`${ROUTES.docs}/*`} element={<DocsPage />} />
+                            </Route>
+                            <Route path="*" element={<DocsNavigate />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>

@@ -70,4 +70,4 @@ $ ws init
 
 ## Наступні кроки
 
-- [Керування проєктами](/projects/management)
+- [Керування проєктами](/docs/project/management)

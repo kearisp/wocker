@@ -1,9 +1,9 @@
 import React, {useMemo} from "react";
-import MarkdownJSX from "markdown-to-jsx";
+import MarkdownJSX, {compiler} from "markdown-to-jsx";
 import Typography from "@mui/material/Typography";
 
 import {titleToId} from "./utils";
-import {A, Blockquote, Code, CodeBlock, H, Pre} from "./blocks";
+import {A, Blockquote, Code, CodeBlock, H, Img, Pre} from "./blocks";
 
 
 const headerRegExp = /---[\r\n]([\s\S]*)[\r\n]---/;
@@ -19,6 +19,12 @@ const Markdown: React.FC<Props> = (props) => {
 
     const markdown = useMemo(() => {
         return content.replace(headerRegExp, "");
+    }, [content]);
+
+    const wd = useMemo(() => {
+        // compiler(content, {
+        //
+        // })
     }, [content]);
 
     return (
@@ -62,6 +68,9 @@ const Markdown: React.FC<Props> = (props) => {
                 },
                 blockquote: {
                     component: Blockquote
+                },
+                img: {
+                    component: Img
                 },
                 pre: {
                     component: Pre

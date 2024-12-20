@@ -4,6 +4,10 @@
         "ua": "Ukrainian"
     },
     "menu": {
+        "memcached": "Memcached",
+        "ollama": "Ollama",
+        "blog": "Blog",
+        "docs": "Docs",
         "build-args": "Build Args",
         "config": "Config",
         "cron": "Cron",
@@ -28,7 +32,9 @@
         "rproxy": "RProxy",
         "maildev": "MailDev",
         "ssl": "SSL",
+        "preset-node": "Node",
         "preset-custom": "Custom",
-        "storage": "Storage"
+        "storage": "Storage",
+        "mongodb": "Mongodb"
     }
 }
