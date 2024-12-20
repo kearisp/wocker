@@ -1,3 +1,3 @@
 # Blog
 
-- [Connecting to a Database in PhpStorm](/blog/posts/1)
+- [Connecting to a Database in PhpStorm](/blog/posts/2)
