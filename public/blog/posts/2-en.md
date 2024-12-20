@@ -25,18 +25,18 @@ ws proxy:start -r
 
 ### Select the Database Type
 
-![Step 1](/blog/posts/1-img-1.png "Step 1")
+![Step 1](/blog/posts/2-img-1.png "Step 1")
 
 
 ### Fill in the Database Credentials
 
-![Step 2](/blog/posts/1-img-2.png "Step 2")
+![Step 2](/blog/posts/2-img-2.png "Step 2")
 
-![Step 3](/blog/posts/1-img-3.png "Step 3")
+![Step 3](/blog/posts/2-img-3.png "Step 3")
 
 
 ### Create an SSH Connection
 
-![Step 4](/blog/posts/1-img-4.png "Step 4")
+![Step 4](/blog/posts/2-img-4.png "Step 4")
 
-![Step 5](/blog/posts/1-img-5.png "Step 5")
+![Step 5](/blog/posts/2-img-5.png "Step 5")

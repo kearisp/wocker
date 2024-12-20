@@ -25,18 +25,18 @@ ws proxy:start -r
 
 ### Оберіть тип бази даних
 
-![Крок 1](/blog/posts/1-img-1.png "Крок 1")
+![Крок 1](/blog/posts/2-img-1.png "Крок 1")
 
 
 ### Заповніть доступи до бази даних
 
-![Крок 2](/blog/posts/1-img-2.png "Крок 2")
+![Крок 2](/blog/posts/2-img-2.png "Крок 2")
 
-![Крок 3](/blog/posts/1-img-3.png "Крок 3")
+![Крок 3](/blog/posts/2-img-3.png "Крок 3")
 
 
 ### Створіть ssh з'єднання
 
-![Крок 4](/blog/posts/1-img-4.png "Крок 4")
+![Крок 4](/blog/posts/2-img-4.png "Крок 4")
 
-![Крок 5](/blog/posts/1-img-5.png "Крок 5")
+![Крок 5](/blog/posts/2-img-5.png "Крок 5")

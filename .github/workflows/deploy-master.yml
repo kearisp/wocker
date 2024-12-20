@@ -4,6 +4,15 @@ on:
     push:
         branches:
           - master
+    pull_request:
+        types:
+          - opened
+          - reopened
+          - synchronize
+        paths:
+          - src
+          - package.json
+          - tsconfig.json
 
 jobs:
     deploy:

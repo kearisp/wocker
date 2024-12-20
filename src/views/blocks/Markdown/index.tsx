@@ -1,5 +1,5 @@
 import React, {useMemo} from "react";
-import MarkdownJSX from "markdown-to-jsx";
+import MarkdownJSX, {compiler} from "markdown-to-jsx";
 import Typography from "@mui/material/Typography";
 
 import {titleToId} from "./utils";
@@ -19,6 +19,12 @@ const Markdown: React.FC<Props> = (props) => {
 
     const markdown = useMemo(() => {
         return content.replace(headerRegExp, "");
+    }, [content]);
+
+    const wd = useMemo(() => {
+        // compiler(content, {
+        //
+        // })
     }, [content]);
 
     return (

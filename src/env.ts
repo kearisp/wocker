@@ -115,6 +115,11 @@ export const MENU: MenuItem[] = [
                 to: `${ROUTES.docs}/plugins/redis`
             },
             {
+                label: "menu.memcached",
+                new: isNewByDate("2025-01-03"),
+                to: `${ROUTES.docs}/plugins/memcached`
+            },
+            {
                 label: "menu.maildev",
                 to: `${ROUTES.docs}/plugins/maildev`
             },

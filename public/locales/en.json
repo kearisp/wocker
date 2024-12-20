@@ -4,6 +4,7 @@
         "ua": "Ukrainian"
     },
     "menu": {
+        "memcached": "Memcached",
         "ollama": "Ollama",
         "blog": "Blog",
         "docs": "Docs",

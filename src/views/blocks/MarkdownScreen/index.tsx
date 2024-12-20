@@ -29,7 +29,23 @@ const MarkdownScreen: React.FC<Props> = (props) => {
         const headings: Heading[] = [];
         const lastLevelMap: any = {};
 
-        (text.match(/#{1,6}\s(.*?)(?=\n)/g) || []).forEach((text: string) => {
+        let isCodeBlock = false;
+
+        let lines = text.split("\n").filter((line: string) => {
+            if(/^```.+/.test(line)) {
+                isCodeBlock = true;
+                return false;
+            }
+
+            if(line === "```") {
+                isCodeBlock = false;
+                return false;
+            }
+
+            return !isCodeBlock;
+        }).join("\n").match(/#{1,6}\s(.*?)(?=\n)/g) || [];
+
+        lines.forEach((text: string) => {
             const [, levelMark, title] = /(#{1,6})\s(.*)/.exec(text) || [];
             const level = levelMark.length;
 
