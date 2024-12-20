@@ -15,6 +15,8 @@ const A: React.FC<Props> = (props) => {
         children
     } = props;
 
+    console.log(href);
+
     if(href.startsWith("http")) {
         return (
             <MuiLink

@@ -72,7 +72,6 @@ const MarkdownScreen: React.FC<Props> = (props) => {
         return headings;
     }, [text]);
 
-
     useEffect(() => {
         (async () => {
             const url = new URL(PUBLIC_PATH, window.location.href);

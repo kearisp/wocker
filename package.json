@@ -1,8 +1,8 @@
 {
     "name": "wocker-docs",
-    "version": "1.0.21",
+    "version": "1.0.22",
     "author": "Kris Papercut <krispcut@gmail.com>",
-    "description": "Docs for @wocker",
+    "description": "Docs for @wocker/ws",
     "license": "MIT",
     "main": "index.js",
     "type": "module",
