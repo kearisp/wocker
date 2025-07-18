@@ -1,0 +1,3 @@
+- [menu.get-started](/docs/get-started)
+- [menu.projects](/docs/project)
+  - [menu.initialization](/docs/project/init)

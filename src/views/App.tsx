@@ -1,6 +1,5 @@
 import React, {Suspense} from "react";
 import {useLocation, BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
-
 import {PUBLIC_PATH, ROUTES} from "../env";
 import {LoadingScreen} from "./blocks";
 import {HomePage, BlogPage, DocsPage} from "./pages";
