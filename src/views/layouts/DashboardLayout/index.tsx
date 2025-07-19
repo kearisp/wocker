@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {
     AppBar,
+    Chip,
     Toolbar,
     Grid,
     Button,
@@ -16,15 +17,14 @@ import {
     useMediaQuery
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
-import {ROUTES, HEADER_MENU} from "../../../env";
 import {asset} from "../../../utils";
 import {ThemeToggle} from "./blocks";
+import {ROUTES, HEADER_MENU} from "../../../env";
 
 
 type Props = PropsWithChildren;
 
-const DashboardLayout: React.FC<Props> = (props) => {
+export const DashboardLayout: React.FC<Props> = (props) => {
     const {
         children
     } = props;
@@ -88,6 +88,8 @@ const DashboardLayout: React.FC<Props> = (props) => {
                         Wocker
                     </Typography>
 
+                    <Chip label="v1.0.23" />
+
                     <Grid sx={{flex: 1}} />
 
                     {HEADER_MENU.map((menuItem, index: number) => {
@@ -135,6 +137,3 @@ const DashboardLayout: React.FC<Props> = (props) => {
         </>
     );
 };
-
-
-export {DashboardLayout};
