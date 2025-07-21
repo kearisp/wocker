@@ -46,6 +46,7 @@ const App: React.FC = () => {
                                 </DocsLayout>
                               }>
                                 <Route path={`${ROUTES.docs}/*`} element={<DocsPage />} />
+                                <Route path={`${ROUTES.docs}/presets/php-apache`} element={<Navigate to={`${ROUTES.docs}/presets/php`} />} />
                             </Route>
                             <Route path="*" element={<DocsNavigate />} />
                         </Route>

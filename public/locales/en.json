@@ -20,7 +20,6 @@
         "mariadb": "Mariadb",
         "overview": "Overview",
         "plugins": "Plugins",
-        "preset-php-apache": "Php Apache",
         "presets": "Presets",
         "project-management": "Management",
         "projects": "Projects",
@@ -33,6 +32,7 @@
         "maildev": "MailDev",
         "ssl": "SSL",
         "preset-node": "Node",
+        "preset-php": "Php",
         "preset-custom": "Custom",
         "storage": "Storage",
         "mongodb": "Mongodb"
