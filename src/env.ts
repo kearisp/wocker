@@ -5,13 +5,13 @@ import {MenuItem} from "./types";
 
 
 export const PUBLIC_PATH = process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_URL, window.location.href).pathname : "/";
-export const DOCS_URL = process.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, "/docs");
-
 export const ROUTES = {
     home: "/",
     blog: "/blog",
     docs: "/docs"
 };
+
+export const DOCS_URL = process.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, ROUTES.docs);
 
 export const HEADER_MENU: MenuItem[] = [
     {
@@ -70,8 +70,8 @@ export const MENU: MenuItem[] = [
         to: `${ROUTES.docs}/presets`,
         children: [
             {
-                label: "menu.preset-php-apache",
-                to: `${ROUTES.docs}/presets/php-apache`
+                label: "menu.preset-php",
+                to: `${ROUTES.docs}/presets/php`
             },
             {
                 label: "menu.preset-node",

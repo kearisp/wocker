@@ -4,5 +4,5 @@
 ## Інсталяція
 
 ```shell
-ws preset:add node
+ws preset:install node
 ```

@@ -1,14 +1,14 @@
-# Php Apache
+# Php
 
 ## Інсталяція
 
 ```shell
-ws preset:add php-apache
+ws preset:install php
 ```
 
 ## Використання:
 
-У цьому розділі описано, як правильно використовувати пресет `php-apache` для ініціалізації та запуску PHP-проєкту з
+У цьому розділі описано, як правильно використовувати пресет `php` для ініціалізації та запуску PHP-проєкту з
 Apache. Виконавши наведені нижче кроки, ви зможете швидко налаштувати середовище для вашого проєкту.
 
 ### 1. Клонування репозиторію та ініціалізація проєкту
@@ -18,15 +18,15 @@ git clone https://github.com/kearisp/timer.git
 cd timer
 ```
 
-### 2. Ініціалізація проєкту з використанням пресету php-apache
+### 2. Ініціалізація проєкту з використанням пресету php
 
 ```shell
 ws init
 ? Project name: timer
 ? Project type: Preset
-? Choose preset: php-apache
+? Choose preset: php
 ? Preset mode: For project only
-? PHP version 8.3
+? Image version: 8.3-apache
 ? Extensions
 ? Install composer? No
 ? Node version none
@@ -60,4 +60,4 @@ ws start
 
 Готовий запущений проєкт, доступний через веб-інтерфейс.
 
-![php-apache-img.png](/docs/presets/php-apache-img.png)
+![php-img.png](/docs/presets/php-img.png)
