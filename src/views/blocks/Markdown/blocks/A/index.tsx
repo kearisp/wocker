@@ -8,14 +8,12 @@ type Props = PropsWithChildren<{
     href: string;
 }>;
 
-const A: React.FC<Props> = (props) => {
+export const A: React.FC<Props> = (props) => {
     const {
         className,
         href,
         children
     } = props;
-
-    console.log(href);
 
     if(href.startsWith("http")) {
         return (
@@ -37,6 +35,3 @@ const A: React.FC<Props> = (props) => {
         </MuiLink>
     );
 };
-
-
-export {A};

@@ -5,3 +5,4 @@ export * from "./CodeBlock";
 export * from "./H";
 export * from "./Img";
 export * from "./Pre";
+export * from "./Source";

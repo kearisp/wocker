@@ -25,7 +25,7 @@ const DocsNavigate = () => {
     );
 };
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
     return (
         <ThemeProvider>
             <Suspense fallback={<LoadingScreen />}>
@@ -56,6 +56,3 @@ const App: React.FC = () => {
         </ThemeProvider>
     );
 };
-
-
-export {App};
