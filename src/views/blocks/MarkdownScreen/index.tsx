@@ -17,7 +17,7 @@ type Props = {
     path: string;
 };
 
-const MarkdownScreen: React.FC<Props> = (props) => {
+export const MarkdownScreen: React.FC<Props> = (props) => {
     const {
         path
     } = props;
@@ -112,6 +112,3 @@ const MarkdownScreen: React.FC<Props> = (props) => {
         </div>
     );
 };
-
-
-export {MarkdownScreen};

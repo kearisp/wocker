@@ -9,13 +9,11 @@ git clone https://github.com/kearisp/timer.git
 cd timer
 ```
 
-Тепер можна ініціалізувати проєкт:
+Тепер можна [ініціалізувати проєкт](/docs/project/init):
 
 ```shell
 ws init
 ```
-
-
 
 ```shell
 ws volume:mount ./:/var/www/htnl
