@@ -21,4 +21,5 @@ Wocker allows you to run projects locally as microservices.
 
 ## Blog
 
+- [Project Deployment Example](/blog/posts/1)
 - [Connecting to a Database in PhpStorm](/blog/posts/2)
