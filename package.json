@@ -1,6 +1,6 @@
 {
     "name": "wocker-docs",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "author": "Kris Papercut <krispcut@gmail.com>",
     "description": "Docs for @wocker/ws",
     "license": "MIT",
@@ -14,10 +14,10 @@
         "eject": "react-scripts eject"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/icons-material": "^5.14.11",
-        "@mui/material": "^5.14.10",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^7.2.0",
+        "@mui/material": "^7.2.0",
         "i18next": "^23.6.0",
         "i18next-http-backend": "^2.3.0",
         "markdown-to-jsx": "^7.3.2",

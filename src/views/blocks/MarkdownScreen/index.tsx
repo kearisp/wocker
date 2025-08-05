@@ -1,10 +1,10 @@
 import React, {useState, useMemo, useEffect} from "react";
 import * as Path from "path-browserify";
 import {useTranslation} from "react-i18next";
-
 import {PUBLIC_PATH} from "../../../env";
 import {Markdown, titleToId} from "../Markdown";
 import {TableOfContents} from "../TableOfContents";
+import styles from "./index.module.scss";
 
 
 type Heading = {
@@ -93,22 +93,18 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
     }, [path, i18n.language]);
 
     return (
-        <div style={{display: "flex"}}>
-            <div
-              style={{flex: 1}}>
+        <div className={styles.container}>
+            <div className={styles.content}>
                 <Markdown
                   content={text} />
             </div>
 
-            {headings.length > 0 && (
-                <div
-                  style={{
-                    flexBasis: "200px",
-                    paddingTop: "20px"
-                  }}>
-                    <TableOfContents headings={headings} />
+            <div className={styles.tocWrapper}>
+                <div className={styles.toc}>
+                    <TableOfContents
+                      headings={headings} />
                 </div>
-            )}
+            </div>
         </div>
     );
 };

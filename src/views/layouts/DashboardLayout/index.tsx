@@ -88,7 +88,7 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                         Wocker
                     </Typography>
 
-                    <Chip label="v1.0.25" />
+                    <Chip label="v1.0.26" />
 
                     <Grid sx={{flex: 1}} />
 
