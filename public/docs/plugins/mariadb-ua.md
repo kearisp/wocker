@@ -19,7 +19,7 @@ ws mariadb:upgrade [service]
 Наступна команда встановлює плагін MariaDB:
 
 ```shell
-ws plugin:add mariadb
+ws plugin:install mariadb
 ```
 
 Після інсталяції необхідно додати наступний рядок до файлу **hosts**:
@@ -29,7 +29,6 @@ ws plugin:add mariadb
 ```
 
 На цьому хості буде відображатись phpmyadmin. Phpmyadmin буде автоматично запущений при виконанні команди `ws mariadb:start` та вимкнено при виконанні `ws mariadb:stop` для останнього сервісу.
-
 
 
 ## Створення сервісу

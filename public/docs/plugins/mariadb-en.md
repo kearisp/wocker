@@ -19,7 +19,7 @@ ws mariadb:upgrade [service]
 The following command installs the MariaDB plugin:
 
 ```shell
-ws plugin:add mariadb
+ws plugin:install mariadb
 ```
 
 After installation, you need to add the following line to the **hosts** file:
