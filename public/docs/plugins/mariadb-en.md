@@ -1,5 +1,19 @@
 # Mariadb
 
+## Commands
+
+```shell
+ws mariadb [service]
+ws mariadb:create <service>
+ws mariadb:destroy <service>
+ws mariadb:use <service>
+ws mariadb:start [service]
+ws mariadb:backup [service]
+ws mariadb:dump [database]
+ws mariadb:upgrade [service]
+```
+
+
 ## Installation
 
 The following command installs the MariaDB plugin:
@@ -15,19 +29,6 @@ After installation, you need to add the following line to the **hosts** file:
 ```
 
 This host will show phpmyadmin. Phpmyadmin will be automatically started when `ws mariadb:start` is executed and disabled when `ws mariadb:stop` is executed for the last service.
-
-
-## Commands
-
-```shell
-ws mariadb [service]
-ws mariadb:create <service>
-ws mariadb:destroy <service>
-ws mariadb:use <service>
-ws mariadb:start [service]
-ws mariadb:backup [service]
-ws mariadb:dump [database]
-```
 
 
 ## Creating a service

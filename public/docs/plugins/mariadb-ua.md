@@ -1,5 +1,19 @@
 # MariaDB
 
+## Команди
+
+```shell
+ws mariadb [service]
+ws mariadb:create <service>
+ws mariadb:destroy <service>
+ws mariadb:use <service>
+ws mariadb:start [service]
+ws mariadb:backup [service]
+ws mariadb:dump [service]
+ws mariadb:upgrade [service]
+```
+
+
 ## Інсталяція
 
 Наступна команда встановлює плагін MariaDB:
@@ -16,18 +30,6 @@ ws plugin:add mariadb
 
 На цьому хості буде відображатись phpmyadmin. Phpmyadmin буде автоматично запущений при виконанні команди `ws mariadb:start` та вимкнено при виконанні `ws mariadb:stop` для останнього сервісу.
 
-
-## Команди
-
-```shell
-ws mariadb [service]
-ws mariadb:create <service>
-ws mariadb:destroy <service>
-ws mariadb:use <service>
-ws mariadb:start [service]
-ws mariadb:backup [service]
-ws mariadb:dump [database]
-```
 
 
 ## Створення сервісу
