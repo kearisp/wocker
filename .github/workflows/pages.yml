@@ -19,6 +19,7 @@ jobs:
         environment: pages
         env:
             PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+            REACT_APP_CANNY_APP_ID: ${{ vars.REACT_APP_CANNY_APP_ID }}
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
