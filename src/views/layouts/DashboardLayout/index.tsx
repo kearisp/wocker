@@ -17,9 +17,11 @@ import {
     useMediaQuery
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import {CannyProvider, CannyChangelog} from "react-canny";
 import {asset} from "../../../utils";
 import {ThemeToggle} from "./blocks";
-import {ROUTES, HEADER_MENU} from "../../../env";
+import {ROUTES, HEADER_MENU, CANNY_APP_ID} from "../../../env";
 
 
 type Props = PropsWithChildren;
@@ -51,7 +53,7 @@ export const DashboardLayout: React.FC<Props> = (props) => {
     }, [i18n]);
 
     return (
-        <>
+        <CannyProvider appId={CANNY_APP_ID} subdomain="kearisp">
             <AppBar position="fixed">
                 <Toolbar>
                     {isMobile && (
@@ -120,6 +122,16 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                         <MenuItem value="ua">Ukrainian</MenuItem>
                         <MenuItem value="en">English</MenuItem>
                     </Select>
+
+                    <CannyChangelog
+                      component={IconButton}
+                      align="right"
+                      labelIDs={[
+                        "68b09319a3f8e8017063a1d4"
+                      ]}
+                      position="bottom">
+                        <NotificationsIcon />
+                    </CannyChangelog>
                 </Toolbar>
             </AppBar>
 
@@ -134,6 +146,6 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                     {children}
                 </Box>
             </Box>
-        </>
+        </CannyProvider>
     );
 };

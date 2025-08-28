@@ -5,6 +5,7 @@ import {MenuItem} from "./types";
 
 
 export const PUBLIC_PATH = process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_URL, window.location.href).pathname : "/";
+export const CANNY_APP_ID = process.env.REACT_APP_CANNY_APP_ID || "";
 export const ROUTES = {
     home: "/",
     blog: "/blog",
