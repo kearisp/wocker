@@ -1,4 +1,9 @@
 {
+    "home": {
+        "title": "Docker-Powered Local Development",
+        "description": "Deploy projects as microservices with automatic SSL, domain management, and plugin ecosystem. Simple CLI, powerful results.",
+        "docs": "Documentation"
+    },
     "language": {
         "en": "English",
         "ua": "Ukrainian"
