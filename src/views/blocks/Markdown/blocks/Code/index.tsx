@@ -1,8 +1,7 @@
 import React, {useContext, useMemo, useEffect, CSSProperties} from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {docco, idea, darcula} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {docco, idea, darcula} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import {useColorScheme} from "@mui/material/styles";
-
 import {CodeBlockContext} from "../CodeBlock";
 import {PreConsumer, PreContext} from "../Pre";
 import "./index.scss";
@@ -14,7 +13,7 @@ type Props = {
     children?: string;
 };
 
-const Code: React.FC<Props> = (props) => {
+export const Code: React.FC<Props> = (props) => {
     const {
         className,
         title,
@@ -77,6 +76,3 @@ const Code: React.FC<Props> = (props) => {
         </SyntaxHighlighter>
     );
 };
-
-
-export {Code};

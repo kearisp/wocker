@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Container, Typography, Box, Button} from "@mui/material";
 import {useTranslation} from "react-i18next";
+import {Container, Typography, Box, Button} from "@mui/material";
 import {
     LiquidEther,
     MarkdownScreen
@@ -34,19 +34,17 @@ const HomePage: React.FC = () => {
                   takeoverDuration={0.25}
                   autoResumeDelay={3000}
                   autoRampDuration={0.6}>
-                    <Box
-                      position="absolute"
-                      top={0}
-                      left={0}
-                      right={0}
-                      bottom={0}
-                      display="flex"
-                      margin="auto"
-                      maxWidth={550}
-                      flexDirection="column"
-                      gap={3}
-                      alignItems="center"
-                      justifyContent="center">
+                    <Container
+                      sx={{
+                        position: "absolute",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        justifyContent: "center",
+                        gap: 4,
+                        inset: 0
+                      }}
+                      maxWidth="sm">
                         <Box display="flex" flexDirection="column" gap={1}>
                             <Typography variant="h1">
                                 {t("home.title")}
@@ -64,7 +62,7 @@ const HomePage: React.FC = () => {
                           to={ROUTES.docs}>
                             {t("home.docs")}
                         </Button>
-                    </Box>
+                    </Container>
                 </LiquidEther>
             </Box>
 
