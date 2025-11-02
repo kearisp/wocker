@@ -3,16 +3,15 @@ import {
     CssBaseline,
     StyledEngineProvider,
     Experimental_CssVarsProvider as CssVarsProvider,
-    experimental_extendTheme as extendTheme
+    extendTheme,
+    useMediaQuery
 } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-
 import {generateTheme} from "./generateTheme";
 
 
 type Props = PropsWithChildren;
 
-const ThemeProvider: React.FC<Props> = (props) => {
+export const ThemeProvider: React.FC<Props> = (props) => {
     const {
         children
     } = props;
@@ -22,6 +21,7 @@ const ThemeProvider: React.FC<Props> = (props) => {
     const eTheme = useMemo(() => {
         return extendTheme({
             cssVarPrefix: "wocker",
+            colorSchemeSelector: "class",
             colorSchemes: {
                 light: generateTheme("light"),
                 dark: generateTheme("dark")
@@ -35,8 +35,8 @@ const ThemeProvider: React.FC<Props> = (props) => {
               modeStorageKey="mode"
               colorSchemeStorageKey="color-scheme"
               attribute="data-color-scheme"
-              defaultMode={prefersDarkMode ? "dark" : "light"}
-              theme={eTheme}>
+              theme={eTheme}
+              defaultMode={prefersDarkMode ? "dark" : "light"}>
                 <CssBaseline />
 
                 {children}
@@ -44,6 +44,3 @@ const ThemeProvider: React.FC<Props> = (props) => {
         </StyledEngineProvider>
     );
 };
-
-
-export {ThemeProvider};

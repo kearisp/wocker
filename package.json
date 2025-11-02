@@ -1,6 +1,6 @@
 {
     "name": "wocker-docs",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "author": "Kris Papercut <krispcut@gmail.com>",
     "description": "Docs for @wocker/ws",
     "license": "MIT",
@@ -14,19 +14,21 @@
         "eject": "react-scripts eject"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/icons-material": "^5.14.11",
-        "@mui/material": "^5.14.10",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^7.2.0",
+        "@mui/material": "^7.2.0",
         "i18next": "^23.6.0",
         "i18next-http-backend": "^2.3.0",
         "markdown-to-jsx": "^7.3.2",
         "path-browserify": "^1.0.1",
         "react": "^18.2.0",
+        "react-canny": "^0.0.8",
         "react-dom": "^18.2.0",
         "react-i18next": "^13.3.1",
         "react-router-dom": "^6.16.0",
-        "react-syntax-highlighter": "^15.5.0"
+        "react-syntax-highlighter": "^15.5.0",
+        "three": "^0.180.0"
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

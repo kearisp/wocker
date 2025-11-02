@@ -8,7 +8,6 @@ npm install @wocker/core
 ```typescript
 // index.ts
 import {Plugin, PluginConfigService} from "@wocker/core";
-
 import {CustomController} from "./contollers/CustomController";
 import {CustomService} from "./services/CustomService";
 
@@ -29,7 +28,6 @@ export default class CustomPlugin {}
 ```typescript
 // controllers/CustomController.ts
 import {Controller, Command, Option} from "@wocker/core";
-
 import {CustomService} from "../services/CustomService";
 
 

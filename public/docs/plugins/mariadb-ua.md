@@ -1,22 +1,5 @@
 # MariaDB
 
-## Інсталяція
-
-Наступна команда встановлює плагін MariaDB:
-
-```shell
-ws plugin:add mariadb
-```
-
-Після інсталяції необхідно додати наступний рядок до файлу **hosts**:
-
-```text
-127.0.0.1 dbadmin-mariadb.workspace
-```
-
-На цьому хості буде відображатись phpmyadmin. Phpmyadmin буде автоматично запущений при виконанні команди `ws mariadb:start` та вимкнено при виконанні `ws mariadb:stop` для останнього сервісу.
-
-
 ## Команди
 
 ```shell
@@ -26,8 +9,26 @@ ws mariadb:destroy <service>
 ws mariadb:use <service>
 ws mariadb:start [service]
 ws mariadb:backup [service]
-ws mariadb:dump [database]
+ws mariadb:dump [service]
+ws mariadb:upgrade [service]
 ```
+
+
+## Інсталяція
+
+Наступна команда встановлює плагін MariaDB:
+
+```shell
+ws plugin:install mariadb
+```
+
+Після інсталяції необхідно додати наступний рядок до файлу **hosts**:
+
+```text
+127.0.0.1 dbadmin-mariadb.workspace
+```
+
+На цьому хості буде відображатись phpmyadmin. Phpmyadmin буде автоматично запущений при виконанні команди `ws mariadb:start` та вимкнено при виконанні `ws mariadb:stop` для останнього сервісу.
 
 
 ## Створення сервісу

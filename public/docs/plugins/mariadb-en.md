@@ -1,22 +1,5 @@
 # Mariadb
 
-## Installation
-
-The following command installs the MariaDB plugin:
-
-```shell
-ws plugin:add mariadb
-```
-
-After installation, you need to add the following line to the **hosts** file:
-
-```text
-127.0.0.1 dbadmin-mariadb.workspace
-```
-
-This host will show phpmyadmin. Phpmyadmin will be automatically started when `ws mariadb:start` is executed and disabled when `ws mariadb:stop` is executed for the last service.
-
-
 ## Commands
 
 ```shell
@@ -27,7 +10,25 @@ ws mariadb:use <service>
 ws mariadb:start [service]
 ws mariadb:backup [service]
 ws mariadb:dump [database]
+ws mariadb:upgrade [service]
 ```
+
+
+## Installation
+
+The following command installs the MariaDB plugin:
+
+```shell
+ws plugin:install mariadb
+```
+
+After installation, you need to add the following line to the **hosts** file:
+
+```text
+127.0.0.1 dbadmin-mariadb.workspace
+```
+
+This host will show phpmyadmin. Phpmyadmin will be automatically started when `ws mariadb:start` is executed and disabled when `ws mariadb:stop` is executed for the last service.
 
 
 ## Creating a service
