@@ -1,18 +1,20 @@
 import * as Path from "path-browserify";
-
 import {isNewByDate} from "./utils";
 import {MenuItem} from "./types";
 
 
-export const PUBLIC_PATH = process.env.PUBLIC_URL ? new URL(process.env.PUBLIC_URL, window.location.href).pathname : "/";
-export const CANNY_APP_ID = process.env.REACT_APP_CANNY_APP_ID || "";
+export const VERSION = "1.0.27";
+
+export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.PUBLIC_URL, window.location.href).pathname : "/";
+
+export const CANNY_APP_ID = import.meta.env.REACT_APP_CANNY_APP_ID || "";
 export const ROUTES = {
     home: "/",
     blog: "/blog",
     docs: "/docs"
 };
 
-export const DOCS_URL = process.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, ROUTES.docs);
+export const DOCS_URL = import.meta.env.REACT_APP_DOCS_URL || Path.join(PUBLIC_PATH, ROUTES.docs);
 
 export const HEADER_MENU: MenuItem[] = [
     {

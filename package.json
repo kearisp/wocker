@@ -1,17 +1,16 @@
 {
-    "name": "wocker-docs",
-    "version": "1.0.26",
+    "name": "@wocker/docs",
+    "version": "1.0.27",
     "author": "Kris Papercut <krispcut@gmail.com>",
     "description": "Docs for @wocker/ws",
     "license": "MIT",
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
+        "start": "vite",
+        "build": "vite build",
         "postbuild": "cp build/index.html build/404.html",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "preview": "vite preview"
     },
     "dependencies": {
         "@emotion/react": "^11.14.0",
@@ -33,21 +32,15 @@
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@types/jest": "^29.5.5",
-        "@types/node": "^20.6.5",
+        "@types/node": "^24.10.1",
         "@types/path-browserify": "^1.0.0",
         "@types/react": "^18.2.22",
         "@types/react-dom": "^18.2.7",
         "@types/react-syntax-highlighter": "^15.5.10",
-        "react-scripts": "^5.0.1",
+        "@vitejs/plugin-react": "^5.1.1",
         "sass": "^1.77.8",
-        "typescript": "^5.5.3"
-    },
-    "overrides": {
-        "react-scripts": {
-            "@svgr/webpack": "latest",
-            "typescript": "latest",
-            "resolve-url-loader": "latest"
-        }
+        "typescript": "^5.5.3",
+        "vite": "^7.2.4"
     },
     "browserslist": {
         "production": [

@@ -21,7 +21,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import {CannyProvider, CannyChangelog} from "react-canny";
 import {asset} from "../../../utils";
 import {ThemeToggle} from "./blocks";
-import {ROUTES, HEADER_MENU, CANNY_APP_ID} from "../../../env";
+import {VERSION, ROUTES, HEADER_MENU, CANNY_APP_ID} from "../../../env";
 
 
 type Props = PropsWithChildren;
@@ -90,7 +90,7 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                         Wocker
                     </Typography>
 
-                    <Chip label="v1.0.26" />
+                    <Chip label={`v${VERSION}`} />
 
                     <Grid sx={{flex: 1}} />
 
