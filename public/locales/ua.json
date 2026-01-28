@@ -24,6 +24,7 @@
         "preset-php": "Php",
         "presets": "Пресети",
         "project-management": "Керування",
-        "projects": "Проєкти"
+        "projects": "Проєкти",
+        "logs": "Логування"
     }
 }
