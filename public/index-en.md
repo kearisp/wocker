@@ -58,6 +58,7 @@ Learn more about [project initialization](/docs/project/init).
 - [Installation](/docs/installation)
 - [Project Initialization](/docs/project/init)
 - [Project Management](/docs/project/management)
+- [Logging](/docs/project/logs)
 
 
 ### Configuration
