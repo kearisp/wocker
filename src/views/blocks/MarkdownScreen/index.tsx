@@ -1,5 +1,5 @@
 import React, {useState, useMemo, useEffect} from "react";
-import * as Path from "path-browserify";
+import Path from "path-browserify";
 import {useTranslation} from "react-i18next";
 import {PUBLIC_PATH} from "../../../env";
 import {Markdown, titleToId} from "../Markdown";
@@ -32,13 +32,8 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
         let isCodeBlock = false;
 
         let lines = text.split("\n").filter((line: string) => {
-            if(/^```.+/.test(line)) {
-                isCodeBlock = true;
-                return false;
-            }
-
-            if(line === "```") {
-                isCodeBlock = false;
+            if(/^\s+?```.+?/.test(line)) {
+                isCodeBlock = !isCodeBlock;
                 return false;
             }
 
@@ -46,7 +41,8 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
         }).join("\n").match(/#{1,6}\s(.*?)(?=\n)/g) || [];
 
         lines.forEach((text: string) => {
-            const [, levelMark, title] = /(#{1,6})\s(.*)/.exec(text) || [];
+            const [, levelMark, title] = /^(#{1,6})\s(.*)/.exec(text) || [];
+
             const level = levelMark.length;
 
             const header: Heading = {
