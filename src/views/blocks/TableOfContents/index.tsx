@@ -1,5 +1,6 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import styles from "./index.module.scss";
 
 
 type Heading = {
@@ -13,17 +14,14 @@ type Props = {
     level?: number;
 };
 
-const TableOfContents: React.FC<Props> = (props) => {
+export const TableOfContents: React.FC<Props> = (props) => {
     const {
         headings,
         level = 0
     } = props;
 
     return (
-        <div
-          style={{
-            paddingLeft: level > 0 ? 10 : 0
-          }}>
+        <div>
             {headings.map((heading) => {
                 const {
                     id,
@@ -32,13 +30,13 @@ const TableOfContents: React.FC<Props> = (props) => {
                 } = heading;
 
                 return (
-                    <div key={id}>
-                        <Typography
-                          component="a"
+                    <div key={id} className={styles.item} data-level={level}>
+                        <Link
+                          variant="body2"
                           color="primary.light"
                           href={`#${id}`}>
                             {title}
-                        </Typography>
+                        </Link>
 
                         {children && (
                             <TableOfContents
@@ -51,6 +49,3 @@ const TableOfContents: React.FC<Props> = (props) => {
         </div>
     );
 };
-
-
-export {TableOfContents}

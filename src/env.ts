@@ -3,7 +3,7 @@ import {isNewByDate} from "./utils";
 import {MenuItem} from "./types";
 
 
-export const VERSION = "1.0.28";
+export const VERSION = "1.0.29";
 
 export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.PUBLIC_URL, window.location.href).pathname : "/";
 
@@ -65,6 +65,10 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.ssl",
                 to: `${ROUTES.docs}/project/ssl`
+            },
+            {
+                label: "menu.logs",
+                to: `${ROUTES.docs}/project/logs`
             }
         ]
     },

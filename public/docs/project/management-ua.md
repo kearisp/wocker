@@ -29,3 +29,13 @@ ws stop
 ```shell
 ws stop --name=project-name
 ```
+
+## Логування
+
+Для перегляду логів проєкту використовуйте команду `ws logs`.
+
+```shell
+ws logs
+```
+
+Детальніше у розділі [Логування](/docs/project/logs).

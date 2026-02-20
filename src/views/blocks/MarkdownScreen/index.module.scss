@@ -19,10 +19,12 @@
 }
 
 .toc {
-    padding-top: 15px;
+    padding: 15px 10px 10px 10px;
 
     @media screen and (min-width: 1099px) {
         position: sticky;
         top: 70px;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
     }
 }

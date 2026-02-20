@@ -58,6 +58,7 @@ Wocker дозволяє запускати проєкти локально як 
 - [Встановлення](/docs/installation)
 - [Ініціалізація проєкту](/docs/project/init)
 - [Керування проєктом](/docs/project/management)
+- [Логування](/docs/project/logs)
 
 
 ### Налаштування

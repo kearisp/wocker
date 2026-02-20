@@ -29,3 +29,13 @@ From another directory
 ```shell
 ws stop --name=project-name
 ```
+
+## Logging
+
+To view project logs, use the `ws logs` command.
+
+```shell
+ws logs
+```
+
+Read more in the [Logging](/docs/project/logs) section.
