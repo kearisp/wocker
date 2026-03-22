@@ -46,7 +46,15 @@ export const App: React.FC = () => {
                                 </DocsLayout>
                               }>
                                 <Route path={`${ROUTES.docs}/*`} element={<DocsPage />} />
-                                <Route path={`${ROUTES.docs}/presets/php-apache`} element={<Navigate to={`${ROUTES.docs}/presets/php`} />} />
+                                <Route
+                                  path={`${ROUTES.docs}/plugins/ngrok`}
+                                  element={<Navigate replace to={`${ROUTES.docs}/plugins/rproxy`} />} />
+                                <Route
+                                  path={`${ROUTES.docs}/plugins/serveo`}
+                                  element={<Navigate replace to={`${ROUTES.docs}/plugins/rproxy`} />} />
+                                <Route
+                                  path={`${ROUTES.docs}/presets/php-apache`}
+                                  element={<Navigate replace to={`${ROUTES.docs}/presets/php`} />} />
                             </Route>
                             <Route path="*" element={<DocsNavigate />} />
                         </Route>

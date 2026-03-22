@@ -8,7 +8,7 @@ export default defineConfig({
         ? new URL(process.env.PUBLIC_URL, "http://localhost").pathname
         : "/",
     build: {
-        outDir: "build",
+        outDir: "build"
     },
     envPrefix: "REACT_APP_",
     define: {

@@ -3,7 +3,7 @@ import {isNewByDate} from "./utils";
 import {MenuItem} from "./types";
 
 
-export const VERSION = "1.0.30";
+export const VERSION = "1.0.31";
 
 export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.PUBLIC_URL, window.location.href).pathname : "/";
 
@@ -139,16 +139,6 @@ export const MENU: MenuItem[] = [
                 label: "menu.rproxy",
                 new: isNewByDate("2024-11-27"),
                 to: `${ROUTES.docs}/plugins/rproxy`
-            },
-            {
-                label: "menu.ngrok",
-                deprecated: true,
-                to: `${ROUTES.docs}/plugins/ngrok`
-            },
-            {
-                label: "menu.serveo",
-                deprecated: true,
-                to: `${ROUTES.docs}/plugins/serveo`
             },
             {
                 label: "menu.ollama",
