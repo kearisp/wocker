@@ -3,7 +3,7 @@ import {isNewByDate} from "./utils";
 import {MenuItem} from "./types";
 
 
-export const VERSION = "1.0.31";
+export const VERSION = "1.0.32";
 
 export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.PUBLIC_URL, window.location.href).pathname : "/";
 
