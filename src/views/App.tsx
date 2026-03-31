@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {useLocation, BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
-import {PUBLIC_PATH, ROUTES} from "../env";
+import {PUBLIC_PATH, Router} from "../env";
 import {LoadingScreen} from "./blocks";
 import {HomePage, BlogPage, DocsPage} from "./pages";
 import {DashboardLayout, DocsLayout} from "./layouts";
@@ -21,7 +21,7 @@ const DocsNavigate = () => {
     }
 
     return (
-        <Navigate replace to={`${ROUTES.docs}${path}`} />
+        <Navigate replace to={`${Router.url("docs")}${path}`} />
     );
 };
 
@@ -37,24 +37,24 @@ export const App: React.FC = () => {
                                 <Outlet />
                             </DashboardLayout>
                           }>
-                            <Route path={ROUTES.home} element={<HomePage />} />
-                            <Route path={`${ROUTES.blog}/*`} element={<BlogPage />} />
+                            <Route path={Router.url("home")} element={<HomePage />} />
+                            <Route path={`${Router.url("blog")}/*`} element={<BlogPage />} />
                             <Route
                               element={
                                 <DocsLayout>
                                     <Outlet />
                                 </DocsLayout>
                               }>
-                                <Route path={`${ROUTES.docs}/*`} element={<DocsPage />} />
+                                <Route path={`${Router.url("docs")}/*`} element={<DocsPage />} />
                                 <Route
-                                  path={`${ROUTES.docs}/plugins/ngrok`}
-                                  element={<Navigate replace to={`${ROUTES.docs}/plugins/rproxy`} />} />
+                                  path={`/docs/plugins/ngrok`}
+                                  element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
                                 <Route
-                                  path={`${ROUTES.docs}/plugins/serveo`}
-                                  element={<Navigate replace to={`${ROUTES.docs}/plugins/rproxy`} />} />
+                                  path={`/docs/plugins/serveo`}
+                                  element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
                                 <Route
-                                  path={`${ROUTES.docs}/presets/php-apache`}
-                                  element={<Navigate replace to={`${ROUTES.docs}/presets/php`} />} />
+                                  path={`/docs/presets/php-apache`}
+                                  element={<Navigate replace to={Router.url("docs.preset.php")} />} />
                             </Route>
                             <Route path="*" element={<DocsNavigate />} />
                         </Route>
