@@ -6,7 +6,7 @@ import {
     LiquidEther,
     MarkdownScreen
 } from "../../blocks";
-import {ROUTES} from "../../../env";
+import {Router} from "../../../env";
 
 
 const HomePage: React.FC = () => {
@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
                           component={Link}
                           variant="contained"
                           color="primary"
-                          to={ROUTES.docs}>
+                          to={Router.url("docs")}>
                             {t("home.docs")}
                         </Button>
                     </Container>

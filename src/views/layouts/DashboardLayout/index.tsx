@@ -21,7 +21,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import {CannyProvider, CannyChangelog} from "react-canny";
 import {asset} from "../../../utils";
 import {ThemeToggle} from "./blocks";
-import {VERSION, ROUTES, HEADER_MENU, CANNY_APP_ID} from "../../../env";
+import {VERSION, Router, HEADER_MENU, CANNY_APP_ID} from "../../../env";
 
 
 type Props = PropsWithChildren;
@@ -86,7 +86,7 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                       component={Link}
                       variant="h6"
                       noWrap
-                      to={ROUTES.home}>
+                      to={Router.url("home")}>
                         Wocker
                     </Typography>
 

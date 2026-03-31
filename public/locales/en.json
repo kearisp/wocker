@@ -39,6 +39,7 @@
         "preset-custom": "Custom",
         "storage": "Storage",
         "mongodb": "Mongodb",
-        "logs": "Logs"
+        "logs": "Logs",
+        "http-auth": "Http Auth"
     }
 }
