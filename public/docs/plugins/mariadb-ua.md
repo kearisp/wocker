@@ -4,13 +4,18 @@
 
 ```shell
 ws mariadb [service]
+ws mariadb:init
 ws mariadb:create <service>
 ws mariadb:destroy <service>
+ws mariadb:upgrade [name]
 ws mariadb:use <service>
 ws mariadb:start [service]
-ws mariadb:backup [service]
+ws mariadb:stop [service]
 ws mariadb:dump [service]
-ws mariadb:upgrade [service]
+ws mariadb:backup [service]
+ws mariadb:restore [service]
+ws mariadb:ls
+ws mariadb:list
 ```
 
 
@@ -31,19 +36,162 @@ ws plugin:install mariadb
 На цьому хості буде відображатись phpmyadmin. Phpmyadmin буде автоматично запущений при виконанні команди `ws mariadb:start` та вимкнено при виконанні `ws mariadb:stop` для останнього сервісу.
 
 
+## Детальний опис команд
+
+### mariadb
+
+Взаємодіє із зазначеним сервісом MariaDB, опціонально націлюючись на конкретну базу даних у цьому сервісі.
+
+```shell
+ws mariadb [service] [options]
+```
+
+**Опції:**
+- `--database`, `-d` — Вказати базу даних для взаємодії.
+
+### mariadb:init
+
+Ініціалізує конфігурацію MariaDB.
+
+```shell
+ws mariadb:init [options]
+```
+
+**Опції:**
+- `--admin-hostname`, `-A` — Вказує ім'я хоста для phpMyAdmin.
+
+### mariadb:create
+
+Створює сервіс MariaDB з можливістю налаштування облікових даних, хоста та параметрів зберігання.
+
+```shell
+ws mariadb:create <service> [options]
+```
+
+**Опції:**
+- `--username`, `-u` — Ім'я користувача.
+- `--password`, `-p` — Пароль.
+- `--root-password`, `-P` — Пароль root.
+- `--host`, `-h` — Зовнішній хост.
+- `--storage`, `-s` — Тип сховища.
+- `--image`, `-i` — Назва образу для запуску сервісу (наприклад, `mariadb:latest`).
+- `--volume`, `-v` — Вказати назву тому (volume).
+- `--container-port` — Порт, на якому контейнер бази даних буде доступний на хості.
+
+> Починаючи з версії `1.0.23`, опцію `--image-version` було видалено. Тепер версію образу слід вказувати безпосередньо в опції `--image` у форматі `image:tag` (наприклад, `--image=mariadb:10.6`).
+
+### mariadb:destroy
+
+Видаляє зазначений екземпляр сервісу MariaDB.
+
+```shell
+ws mariadb:destroy <service> [options]
+```
+
+**Опції:**
+- `--force`, `-f` — Примусове видалення.
+- `--yes`, `-y` — Пропустити підтвердження.
+
+### mariadb:upgrade
+
+Оновлює конфігурацію сервісу MariaDB.
+
+```shell
+ws mariadb:upgrade [name] [options]
+```
+
+**Опції:**
+- `--storage`, `-s` — Вказати тип сховища.
+- `--volume`, `-v` — Вказати назву тому.
+- `--image`, `-i` — Вказати назву образу та тег (наприклад, `mariadb:11.0`).
+- `--container-port` — Порт, на якому контейнер бази даних буде доступний на хості.
+- `--enable-admin` — Увімкнути phpMyAdmin.
+- `--disable-admin` — Вимкнути phpMyAdmin.
+
+### mariadb:use
+
+Встановлює зазначений сервіс MariaDB як сервіс за замовчуванням або повертає назву поточного сервісу за замовчуванням.
+
+```shell
+ws mariadb:use [service]
+```
+
+### mariadb:start
+
+
+
+```shell
+ws mariadb:start [service] [options]
+```
+
+
+### mariadb:stop
+
+Зупиняє зазначений екземпляр сервісу MariaDB.
+
+```shell
+ws mariadb:stop [service]
+```
+
+### mariadb:dump
+
+Створює дамп зазначеного сервісу MariaDB.
+
+```shell
+ws mariadb:dump [service] [options]
+```
+
+**Опції:**
+- `--database`, `-d` — Назва бази даних для дампу.
+
+### mariadb:backup
+
+Створює або видаляє бекап бази даних для сервісу MariaDB.
+
+```shell
+ws mariadb:backup [service] [options]
+```
+
+**Опції:**
+- `--database`, `-d` — Назва бази даних для бекапу.
+- `--filename`, `-f` — Назва файлу бекапу.
+- `--delete`, `-D` — Видалити вказаний файл бекапу.
+- `--yes`, `-y` — Автоматичне підтвердження видалення файлу.
+
+### mariadb:restore
+
+Відновлює базу даних MariaDB із зазначеного файлу бекапу.
+
+```shell
+ws mariadb:restore [service] [options]
+```
+
+**Опції:**
+- `--database`, `-d` — Назва бази даних для відновлення.
+- `--filename`, `-f` — Назва файлу бекапу для відновлення.
+
+### mariadb:ls / mariadb:list
+
+Виводить список усіх сервісів MariaDB.
+
+```shell
+ws mariadb:ls
+# або
+ws mariadb:list
+```
+
+
 ## Створення сервісу
 
 ```shell
-ws mariadb:create <service> --user=root --password=root
+ws mariadb:create <service> --username=root --password=root --image=mariadb:latest
 ```
 
-_user_ - ім'я користувача
+_username_ - ім'я користувача
 
 _password_ - пароль від бази даних
 
 _host_ - хост для зовнішнього екземпляра
-
-> ⚠
 
 
 ## Видалення сервісу
@@ -61,7 +209,10 @@ ws mariadb:destroy <service>
 ws mariadb:start [service]
 ```
 
-Буде запущено сервіс із назвою контейнера: `mariadb-[service].ws`
+**Опції:**
+- `--restart`, `-r` — Перезапустити сервіс, якщо він уже працює.
+
+Запускає зазначений сервіс MariaDB. е запущено сервіс із назвою контейнера: `mariadb-[service].ws`
 
 
 ## Резервні копії
@@ -98,12 +249,12 @@ $ ws mariadb:backup example
 > ${WS_DIR}/plugins/mariadb/dump/**\[service]**/**\[dbname]**/**\[filename]**.sql
 
 
-### Delete backup
+### Видалення бекапу
 
-The `mariadb:backup -D` command will remove file from `$WS_DIR` directory.
+Команда `mariadb:backup -D` видаляє файл із директорії `$WS_DIR`.
 
 ```shell
-ws mariadb:backup -D [service]
+ws mariadb:backup [service] -D -d dbname -f filename
 ```
 
 

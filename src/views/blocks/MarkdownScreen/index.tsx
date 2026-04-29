@@ -32,7 +32,7 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
         let isCodeBlock = false;
 
         let lines = text.split("\n").filter((line: string) => {
-            if(/^\s+?```.+?/.test(line)) {
+            if(/^\s*```.*/.test(line)) {
                 isCodeBlock = !isCodeBlock;
                 return false;
             }
