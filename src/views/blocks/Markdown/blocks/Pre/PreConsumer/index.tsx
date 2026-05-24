@@ -7,7 +7,7 @@ type Props = PropsWithChildren<{
     style?: CSSProperties;
 }>;
 
-const PreConsumer: React.FC<Props> = (props) => {
+export const PreConsumer: React.FC<Props> = (props) => {
     const {
         children,
         ...rest
@@ -51,6 +51,3 @@ const PreConsumer: React.FC<Props> = (props) => {
         </span>
     );
 };
-
-
-export {PreConsumer};

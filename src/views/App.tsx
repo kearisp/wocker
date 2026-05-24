@@ -4,7 +4,6 @@ import {PUBLIC_PATH, Router} from "../env";
 import {LoadingScreen} from "./blocks";
 import {HomePage, BlogPage, DocsPage} from "./pages";
 import {DashboardLayout, DocsLayout} from "./layouts";
-import {ThemeProvider} from "./providers";
 import "./App.scss";
 
 
@@ -27,40 +26,40 @@ const DocsNavigate = () => {
 
 export const App: React.FC = () => {
     return (
-        <ThemeProvider>
-            <Suspense fallback={<LoadingScreen />}>
-                <BrowserRouter basename={PUBLIC_PATH}>
-                    <Routes>
+        <Suspense fallback={<LoadingScreen />}>
+            <BrowserRouter basename={PUBLIC_PATH}>
+                <Routes>
+                    <Route
+                      element={
+                        <DashboardLayout>
+                            <Suspense fallback={<LoadingScreen />}>
+                                <Outlet />
+                            </Suspense>
+                        </DashboardLayout>
+                      }>
+                        <Route path={Router.url("home")} element={<HomePage />} />
+                        <Route path={`${Router.url("blog")}/*`} element={<BlogPage />} />
                         <Route
                           element={
-                            <DashboardLayout>
+                            <DocsLayout>
                                 <Outlet />
-                            </DashboardLayout>
+                            </DocsLayout>
                           }>
-                            <Route path={Router.url("home")} element={<HomePage />} />
-                            <Route path={`${Router.url("blog")}/*`} element={<BlogPage />} />
+                            <Route path={`${Router.url("docs")}/*`} element={<DocsPage />} />
                             <Route
-                              element={
-                                <DocsLayout>
-                                    <Outlet />
-                                </DocsLayout>
-                              }>
-                                <Route path={`${Router.url("docs")}/*`} element={<DocsPage />} />
-                                <Route
-                                  path={`/docs/plugins/ngrok`}
-                                  element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
-                                <Route
-                                  path={`/docs/plugins/serveo`}
-                                  element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
-                                <Route
-                                  path={`/docs/presets/php-apache`}
-                                  element={<Navigate replace to={Router.url("docs.preset.php")} />} />
-                            </Route>
-                            <Route path="*" element={<DocsNavigate />} />
+                              path={`/docs/plugins/ngrok`}
+                              element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
+                            <Route
+                              path={`/docs/plugins/serveo`}
+                              element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
+                            <Route
+                              path={`/docs/presets/php-apache`}
+                              element={<Navigate replace to={Router.url("docs.preset.php")} />} />
                         </Route>
-                    </Routes>
-                </BrowserRouter>
-            </Suspense>
-        </ThemeProvider>
+                        <Route path="*" element={<DocsNavigate />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </Suspense>
     );
 };

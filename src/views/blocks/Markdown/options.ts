@@ -1,9 +1,10 @@
-import Typography from "@mui/material/Typography";
+import {ComponentProps} from "react";
+import Markdown from "markdown-to-jsx";
 import {titleToId} from "./utils";
-import {A, Blockquote, Code, CodeBlock, H, Img, Pre, Source} from "./blocks";
+import {A, Blockquote, Code, CodeBlock, H, Img, Li, Ol, P, Pre, Source, Table, Ul} from "./blocks";
 
 
-export const options = {
+export const options: ComponentProps<typeof Markdown>["options"] = {
     slugify: titleToId,
     overrides: {
         h1: {
@@ -31,20 +32,19 @@ export const options = {
             }
         },
         p: {
-            component: Typography,
-            props: {
-                sx: {
-                    mt: 1,
-                    mb: 1
-                },
-                variant: "body1"
-            }
+            component: P
         },
         blockquote: {
             component: Blockquote
         },
         img: {
             component: Img
+        },
+        li: {
+            component: Li
+        },
+        ol: {
+            component: Ol
         },
         pre: {
             component: Pre
@@ -60,6 +60,12 @@ export const options = {
         },
         source: {
             component: Source
+        },
+        table: {
+            component: Table
+        },
+        ul: {
+            component: Ul
         }
     }
 };

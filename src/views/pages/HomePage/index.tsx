@@ -1,12 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {Container, Typography, Box, Button} from "@mui/material";
-import {
-    LiquidEther,
-    MarkdownScreen
-} from "../../blocks";
-import {Router} from "../../../env";
+import {LiquidEther, MarkdownScreen, Button} from "src/views/blocks";
+import {Router} from "src/env";
 
 
 const HomePage: React.FC = () => {
@@ -14,10 +10,7 @@ const HomePage: React.FC = () => {
 
     return (
         <>
-            <Box
-              position="relative"
-              width="100%"
-              height={600}>
+            <div className="relative w-full h-[600px]">
                 <LiquidEther
                   colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
                   mouseForce={65}
@@ -34,42 +27,32 @@ const HomePage: React.FC = () => {
                   takeoverDuration={0.25}
                   autoResumeDelay={3000}
                   autoRampDuration={0.6}>
-                    <Container
-                      sx={{
-                        position: "absolute",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                        gap: 4,
-                        inset: 0
-                      }}
-                      maxWidth="sm">
-                        <Box display="flex" flexDirection="column" gap={1}>
-                            <Typography variant="h1">
+                    <div className="absolute inset-0 flex flex-col items-start justify-center gap-8 max-w-(--breakpoint-sm) mx-auto px-6">
+                        <div className="flex flex-col gap-1">
+                            <h1 className="text-4xl md:text-6xl font-bold text-foreground">
                                 {t("home.title")}
-                            </Typography>
+                            </h1>
 
-                            <Typography variant="body1" color="textSecondary">
+                            <p className="text-lg text-muted-foreground">
                                 {t("home.description")}
-                            </Typography>
-                        </Box>
+                            </p>
+                        </div>
 
                         <Button
-                          component={Link}
-                          variant="contained"
-                          color="primary"
+                          as={Link}
+                          variant="primary"
+                          className="px-6 h-12"
                           to={Router.url("docs")}>
                             {t("home.docs")}
                         </Button>
-                    </Container>
+                    </div>
                 </LiquidEther>
-            </Box>
+            </div>
 
-            <Container>
+            <div className="px-6">
                 <MarkdownScreen
                   path="index.md" />
-            </Container>
+            </div>
         </>
     );
 };

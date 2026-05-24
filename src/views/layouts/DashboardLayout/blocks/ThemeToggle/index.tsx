@@ -1,30 +1,23 @@
-import React, {useMemo, useCallback} from "react";
-import {useColorScheme, Switch} from "@mui/material";
+import React, {useCallback} from "react";
+import {useTheme} from "src/hooks/useTheme";
+import {Switch} from "src/views/blocks/Switch";
 
 
-const ThemeToggle: React.FC = () => {
-    const {mode, setMode} = useColorScheme();
+export const ThemeToggle: React.FC = () => {
+    const {isLight, setTheme} = useTheme();
 
-    const active = useMemo(() => {
-        return mode === "light";
-    }, [mode]);
-
-    const handleChange = useCallback((ignore, active: boolean) => {
+    const handleChange = useCallback((active: boolean) => {
         if(active) {
-            setMode("light");
+            setTheme("light");
         }
         else {
-            setMode("dark");
+            setTheme("dark");
         }
-    }, [setMode]);
+    }, [setTheme]);
 
     return (
         <Switch
-          color="default"
-          checked={active}
-          onChange={handleChange} />
+          checked={isLight}
+          onCheckedChange={handleChange} />
     );
 };
-
-
-export {ThemeToggle};

@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "@mui/material/Link";
 import styles from "./index.module.scss";
 
 
@@ -31,12 +30,11 @@ export const TableOfContents: React.FC<Props> = (props) => {
 
                 return (
                     <div key={id} className={styles.item} data-level={level}>
-                        <Link
-                          variant="body2"
-                          color="primary.light"
+                        <a
+                          className="underline text-primary"
                           href={`#${id}`}>
                             {title}
-                        </Link>
+                        </a>
 
                         {children && (
                             <TableOfContents

@@ -1,6 +1,4 @@
 import React, {PropsWithChildren} from "react";
-import {Box} from "@mui/material";
-
 import {Sidebar} from "./blocks";
 
 
@@ -12,14 +10,14 @@ export const DocsLayout: React.FC<Props> = (props) => {
     } = props;
 
     return (
-        <Box display="flex">
-            <Box sx={{width: 220, flexBasis: 220, minWidth: 220}}>
+        <div className="flex gap-4">
+            <div className="w-[220px] flex-basis-[220px] min-w-[220px]">
                 <Sidebar />
-            </Box>
+            </div>
 
-            <Box flex={1}>
+            <div className="flex-1">
                 {children}
-            </Box>
-        </Box>
+            </div>
+        </div>
     );
 };

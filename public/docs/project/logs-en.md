@@ -17,16 +17,19 @@ The `ws logs` command is used to view project logs or global `wocker` logs.
 ### Examples
 
 View logs of the current project:
+
 ```shell
 ws logs
 ```
 
 View global `wocker` logs in real-time:
+
 ```shell
 ws logs -g -f
 ```
 
 Clear global logs:
+
 ```shell
 ws logs -g -c
 ```
