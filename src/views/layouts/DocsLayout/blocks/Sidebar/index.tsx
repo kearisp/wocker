@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from "react";
-import * as Path from "path-browserify";
-import MarkdownJSX, {compiler} from "markdown-to-jsx";
-
-import {Markdown} from "../../../../blocks";
-import {MENU, PUBLIC_PATH} from "../../../../../env";
+import Path from "path-browserify";
 import {MainMenu} from "../../../DashboardLayout/blocks/MainMenu";
+import {MENU, PUBLIC_PATH} from "src/env";
 
 
 export const Sidebar: React.FC = () => {

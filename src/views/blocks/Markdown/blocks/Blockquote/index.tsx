@@ -1,5 +1,4 @@
-import React, {Children, PropsWithChildren} from "react";
-import Box from "@mui/material/Box";
+import React, {PropsWithChildren} from "react";
 
 
 type Props = PropsWithChildren;
@@ -10,19 +9,9 @@ const Blockquote: React.FC<Props> = (props) => {
     } = props;
 
     return (
-        <Box
-          sx={{
-            borderLeft: "5px solid var(--wocker-palette-primary-main)",
-            borderRadius: "4px",
-            // paddingLeft: "16px",
-            padding: "1px 0 1px 16px",
-            margin: "0",
-          }}
-          component="blockquote">
-            {Children.map(children, (child) => {
-                return (child);
-            })}
-        </Box>
+        <blockquote className="border-l-4 border-primary rounded-sm py-1 pl-4 my-4 italic text-muted-foreground bg-muted/30">
+            {children}
+        </blockquote>
     );
 };
 

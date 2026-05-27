@@ -1,5 +1,22 @@
 # PostgreSQL Plugin
 
+## Commands
+
+```shell
+ws pgsql [service]
+ws pgsql:init [--admin-enabled | --admin-disabled] [-e <email>] [-p <password>] [-s]
+ws pgsql:create [service] -u <user> -p <password> -h <host> -P <port> [-i <image>] [--container-port <port>]
+ws pgsql:upgrade [service] [-i <image>] [--container-port <port>]
+ws pgsql:destroy <service> [-y|--yes] [-f|--force]
+ws pgsql:start [service] [-r|--restart]
+ws pgsql:stop [service]
+ws pgsql:use [service]
+ws pgsql:ls
+ws pgsql:dump [service]
+ws pgsql:backup [service] [-d <database>] [-f <filename>] [-D|--delete]
+ws pgsql:restore [service] [-d <database>] [-f <filename>]
+```
+
 Manage PostgreSQL services in your Wocker workspace: create, start/stop, set default, upgrade, backup/restore, and open the admin interface (pgAdmin).
 
 ## Installation
@@ -34,8 +51,8 @@ ws pgsql:init [--admin-enabled | --admin-disabled] [-e <email>] [-p <password>] 
 ws pgsql [service]
 
 # Create/upgrade/destroy service
-ws pgsql:create <service> -u <user> -p <password> -h <host> -P <port> [-i <image>] [-I <version>] [--container-port <port>]
-ws pgsql:upgrade [service] [-i <image>] [-I <version>] [--container-port <port>]
+ws pgsql:create <service> -u <user> -p <password> -h <host> -P <port> [-i <image>] [--container-port <port>]
+ws pgsql:upgrade [service] [-i <image>] [--container-port <port>]
 ws pgsql:destroy <service> [-y|--yes] [-f|--force]
 
 # Manage lifecycle
@@ -43,7 +60,7 @@ ws pgsql:start [service] [-r|--restart]
 ws pgsql:stop [service]
 
 # Set default service
-ws pgsql:use <service>
+ws pgsql:use [service]
 
 # List tables of the current/default service
 ws pgsql:ls
@@ -67,14 +84,12 @@ ws pgsql:restore [service] [-d <database>] [-f <filename>]
   - `-p, --password <password>` — database password
   - `-h, --host <host>` — external host to connect to. If `--host` is provided, the service is treated as external: no Docker container will be created for this service, but the database will be available in the admin interface (pgAdmin).
   - `-P, --port <port>` — external port for connecting to the specified host
-  - `-i, --image <image>` — Docker image name (e.g. `postgres`)
-  - `-I, --image-version <version>` — image tag/version (e.g. `16`)
+  - `-i, --image <image>` — Docker image name with tag (e.g. `postgres:16`)
   - `--container-port <port>` — port exposed by the container on the host
 
 - pgsql:upgrade
-  - `-i, --image <image>`
-  - `-I, --image-version <version>`
-  - `--container-port <port>`
+  - `-i, --image <image>` — Docker image name with tag (e.g. `postgres:17`)
+  - `--container-port <port>` — port exposed by the container on the host
 
 - pgsql:destroy
   - `-y, --yes` — do not ask for confirmation
@@ -88,31 +103,10 @@ ws pgsql:restore [service] [-d <database>] [-f <filename>]
   - `-f, --filename <path>` — path to backup file
   - `-D, --delete` (backup only) — optionally delete older backups
 
-## Examples
-
-```shell
-# Create with custom image and version
-ws pgsql:create analytics -u app -p s3cr3t -h 127.0.0.1 -P 5542 -i postgres -I 16
-
-# Upgrade default service to a newer image version
-ws pgsql:upgrade -I 17
-
-# Start specific service and restart if running
-ws pgsql:start analytics -r
-
-# Make a logical backup of a database
-ws pgsql:backup -d mydb -f backups/mydb_$(date +%F).sql
-
-# Restore from a backup file into a service
-ws pgsql:restore analytics -d mydb -f backups/mydb.sql
-
-# Drop a service without prompts
-ws pgsql:destroy analytics -y
-```
 
 ## Notes
 
-- When a `service` argument is omitted, commands use the default PostgreSQL service (set with `ws pgsql:use <service>`).
+- When a `service` argument is omitted, commands use the default PostgreSQL service (set with `ws pgsql:use [service]`).
 - If `--host` is provided to `ws pgsql:create`, the service is treated as external: no Docker container will be created for it; lifecycle commands like `start/stop/upgrade/destroy` do not manage it; container-specific options (e.g., `--container-port`) are ignored. The database will still be available in the admin interface (pgAdmin).
 - The admin interface (pgAdmin) is opened automatically after certain operations (e.g., `init`, `start`, `destroy`).
 - Shell completion is available for the `service` parameter in several commands.

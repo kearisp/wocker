@@ -9,7 +9,7 @@ type Props = PropsWithChildren<{
 
 const Pre: React.FC<Props> = (props) => {
     const {
-        className,
+        className = "",
         children
     } = props;
 
@@ -22,8 +22,8 @@ const Pre: React.FC<Props> = (props) => {
             setProps: setCProps
           }}>
             <pre
-              className={className}
-              {...cProps}>
+              {...cProps}
+              className={`${className} block mb-4 text-primary`}>
                 {children}
             </pre>
         </PreContext.Provider>

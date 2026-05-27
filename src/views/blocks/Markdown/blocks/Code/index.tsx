@@ -1,10 +1,9 @@
 import React, {useContext, useMemo, useEffect, CSSProperties} from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import {docco, idea, darcula} from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import {useColorScheme} from "@mui/material/styles";
+import {useTheme} from "src/hooks/useTheme";
 import {CodeBlockContext} from "../CodeBlock";
 import {PreConsumer, PreContext} from "../Pre";
-import "./index.scss";
 
 
 type Props = {
@@ -20,7 +19,7 @@ export const Code: React.FC<Props> = (props) => {
         children = ""
     } = props;
 
-    const {mode} = useColorScheme();
+    const {theme} = useTheme();
     const {register} = useContext(CodeBlockContext);
 
     const lang = useMemo(() => {
@@ -43,20 +42,28 @@ export const Code: React.FC<Props> = (props) => {
     }, [hasPre, lang]);
 
     const style = useMemo(() => {
-        return mode === "dark" ? darcula : {
+        return theme === "dark" ? darcula : {
             ...idea,
             hljs: docco.hljs
         };
-    }, [mode]);
+    }, [theme]);
 
     const customStyle = useMemo((): CSSProperties => {
+        const baseStyle: CSSProperties = {
+            padding: hasPre ? "1rem" : "0.1em 0.3em",
+            borderRadius: "0.4rem",
+            fontSize: hasPre ? "0.875rem" : "0.9em",
+            lineHeight: "1.25rem",
+            margin: hasPre ? undefined : "0",
+            display: hasPre ? "block" : "inline-block",
+            verticalAlign: hasPre ? "baseline" : "middle"
+        };
+
         if(["text", "shell"].includes(lang)) {
-            return {
-                lineHeight: 1.15
-            };
+            baseStyle.lineHeight = "1.15";
         }
 
-        return {};
+        return baseStyle;
     }, [lang]);
 
     useEffect(() => {

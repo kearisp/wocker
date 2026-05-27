@@ -1,9 +1,4 @@
 import React, {useState, useCallback, createContext, Children, PropsWithChildren} from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Card from "@mui/material/Card";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 
 
 const Context = createContext<{
@@ -41,45 +36,41 @@ const CodeBlock: React.FC<Props> = (props) => {
     }, []);
 
     return (
-        <Card variant="outlined">
-            <Tabs
-              variant="standard"
-              value={activeTab}
-              onChange={(e, value) => setActiveTab(value)}>
+        <div className="border border-border rounded-lg overflow-hidden my-6 bg-card text-card-foreground">
+            <div className="flex border-b border-border bg-muted/50 overflow-x-auto">
                 {Children.map(children, (child, index) => {
+                    const isActive = activeTab === index;
                     return (
-                        <Tab
-                          sx={{
-                            textTransform: "none"
-                          }}
-                          label={mapTitles[index] || ""} />
+                        <button
+                          key={index}
+                          className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 outline-none whitespace-nowrap ${
+                            isActive
+                              ? "border-primary text-primary bg-background"
+                              : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted"
+                          }`}
+                          onClick={() => setActiveTab(index)}>
+                            {mapTitles[index] || "Tab"}
+                        </button>
                     );
                 })}
-            </Tabs>
-
-            <Divider />
+            </div>
 
             {Children.map(children, (child, index) => {
                 return (
                     <Context.Provider
+                      key={index}
                       value={{
                         register: (title: string) => handleRegisterTab(title, index),
                         unregister: () => handleUnregisterTab(index)
                       }}>
-                        <Box
-                          sx={{
-                            display: activeTab === index ? "" : "none",
-                            "& > pre": {
-                                margin: 0,
-                                background: "none !important"
-                            }
-                          }}>
+                        <div
+                          className={`${activeTab === index ? "block" : "hidden"} [&>pre]:!m-0 [&>pre]:!bg-transparent`}>
                             {child}
-                        </Box>
+                        </div>
                     </Context.Provider>
                 );
             })}
-        </Card>
+        </div>
     );
 };
 

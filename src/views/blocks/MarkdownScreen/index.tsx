@@ -1,9 +1,9 @@
 import React, {useState, useMemo, useEffect} from "react";
 import Path from "path-browserify";
 import {useTranslation} from "react-i18next";
-import {PUBLIC_PATH} from "../../../env";
-import {Markdown, titleToId} from "../Markdown";
-import {TableOfContents} from "../TableOfContents";
+import {Markdown, titleToId} from "src/views/blocks/Markdown";
+import {TableOfContents} from "src/views/blocks/TableOfContents";
+import {PUBLIC_PATH} from "src/env";
 import styles from "./index.module.scss";
 
 
@@ -32,7 +32,7 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
         let isCodeBlock = false;
 
         let lines = text.split("\n").filter((line: string) => {
-            if(/^\s+?```.+?/.test(line)) {
+            if(/^\s*```.*/.test(line)) {
                 isCodeBlock = !isCodeBlock;
                 return false;
             }

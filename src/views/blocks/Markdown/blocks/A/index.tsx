@@ -1,6 +1,6 @@
-import React, {PropsWithChildren, ElementType} from "react";
-import {Link, LinkProps} from "react-router-dom";
-import {Link as MuiLink} from "@mui/material";
+import React, {PropsWithChildren} from "react";
+import {Link} from "react-router-dom";
+import {clsx} from "clsx";
 
 
 type Props = PropsWithChildren<{
@@ -10,28 +10,30 @@ type Props = PropsWithChildren<{
 
 export const A: React.FC<Props> = (props) => {
     const {
-        className,
+        className = "",
         href,
         children
     } = props;
 
+    const modifications = clsx("text-link hover:text-link-hover visited:text-link-visited hover:underline transition-all", className);
+
     if(href.startsWith("http")) {
         return (
-            <MuiLink
-              className={className}
+            <a
+              className={modifications}
               target="_blank"
+              rel="noreferrer"
               href={href}>
                 {children}
-            </MuiLink>
+            </a>
         );
     }
 
     return (
-        <MuiLink
-          className={className}
-          component={Link as ElementType<LinkProps>}
+        <Link
+          className={modifications}
           to={href}>
             {children}
-        </MuiLink>
+        </Link>
     );
 };

@@ -2,27 +2,17 @@ import React, {useState, useCallback} from "react";
 import {Link} from "react-router-dom";
 import clsx from "clsx";
 import {useTranslation} from "react-i18next";
-import {
-    List,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    Collapse,
-    Chip
-} from "@mui/material";
-import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRightRounded";
-
-import {MenuItem} from "../../../../../types";
-import {useMatchPath} from "../../../../../hooks";
-import "./index.scss";
+import {ChevronRight} from "lucide-react";
+import {useMatchPath} from "src/hooks";
+import {MenuItem} from "src/types";
 
 
-type Props = {
+type MainMenuProps = {
     isChild?: boolean;
     items: MenuItem[];
 };
 
-const MainMenu: React.FC<Props> = (props) => {
+export const MainMenu: React.FC<MainMenuProps> = (props) => {
     const {
         isChild,
         items
@@ -44,10 +34,6 @@ const MainMenu: React.FC<Props> = (props) => {
         return openIndexes;
     });
 
-    const modifications = clsx({
-        "main-menu--child": isChild
-    });
-
     const handleToggle = useCallback((index: number) => {
         setOpenIndexes((openIndexes) => {
             if(openIndexes.includes(index)) {
@@ -64,12 +50,7 @@ const MainMenu: React.FC<Props> = (props) => {
     }, []);
 
     return (
-        <List
-          sx={{
-            pl: isChild ? 4 : undefined
-          }}
-          className={`main-menu ${modifications}`}
-          disablePadding={isChild}>
+        <div className={clsx("flex flex-col", isChild && "ml-4 border-l border-border")}>
             {items.map((item, index) => {
                 const {
                     label = "",
@@ -79,69 +60,58 @@ const MainMenu: React.FC<Props> = (props) => {
                     to
                 } = item;
 
-                const modifications = clsx({
-                    "main-menu-item--active": matchPath(to)
-                });
+                const isOpen = openIndexes.includes(index);
+                const isActive = matchPath(to);
 
                 return (
                     <React.Fragment key={index}>
-                        <ListItemButton
-                          component={Link}
-                          className={`main-menu-item ${modifications}`}
+                        <Link
+                          className={clsx(
+                            "flex items-center justify-between px-4 py-2 text-sm transition-colors hover:bg-muted/50 rounded-md mx-1",
+                            isActive ? "text-primary font-semibold bg-primary/5" : "text-foreground"
+                          )}
                           to={to}
                           onClick={(e) => {
                             if(children && children.length > 0) {
                                 e.preventDefault();
-
                                 handleToggle(index);
                             }
                           }}>
-                            <ListItemText
-                              primary={
-                                <React.Fragment>
-                                    {t(label)}
-                                </React.Fragment>
-                              } />
+                            <span className="truncate">
+                                {t(label)}
+                            </span>
 
-                            <ListItemIcon>
+                            <div className="flex items-center gap-2 shrink-0 ml-2">
                                 {isNew && (
-                                    <Chip
-                                      color="success"
-                                      size="small"
-                                      label="new" />
+                                    <span className="px-1.5 py-0.5 text-[10px] font-bold uppercase rounded bg-green-500 text-white">
+                                        new
+                                    </span>
                                 )}
 
                                 {isDeprecated && (
-                                    <Chip
-                                      color="warning"
-                                      size="small"
-                                      label="deprecated" />
+                                    <span className="px-1.5 py-0.5 text-[10px] font-bold uppercase rounded bg-amber-500 text-white">
+                                        deprecated
+                                    </span>
                                 )}
 
                                 {children && children.length > 0 && (
-                                    <ArrowRightIcon
-                                      sx={{
-                                        transition: "0.3s",
-                                        transform: openIndexes.includes(index) ? "rotate(90deg)" : "rotate(0)"
-                                      }}
-                                      color="primary" />
+                                    <ChevronRight
+                                      className={clsx(
+                                        "w-4 h-4 transition-transform duration-300 text-primary",
+                                        isOpen && "rotate-90"
+                                      )} />
                                 )}
-                            </ListItemIcon>
-                        </ListItemButton>
+                            </div>
+                        </Link>
 
-                        {children && children.length > 0 && (
-                            <Collapse in={openIndexes.includes(index)}>
-                                <MainMenu
-                                  isChild
-                                  items={children} />
-                            </Collapse>
+                        {children && children.length > 0 && isOpen && (
+                            <MainMenu
+                              isChild
+                              items={children} />
                         )}
                     </React.Fragment>
                 );
             })}
-        </List>
+        </div>
     );
 };
-
-
-export {MainMenu};

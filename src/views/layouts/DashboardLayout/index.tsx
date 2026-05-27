@@ -1,27 +1,13 @@
-import React, {useState, useCallback, PropsWithChildren} from "react";
+import React, {useCallback, PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {
-    AppBar,
-    Chip,
-    Toolbar,
-    Grid,
-    Button,
-    Box,
-    Select,
-    SelectChangeEvent,
-    IconButton,
-    MenuItem,
-    Typography,
-    useTheme,
-    useMediaQuery
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import {LucideBell, ChevronUp, ChevronDown} from "lucide-react";
 import {CannyProvider, CannyChangelog} from "react-canny";
-import {asset} from "../../../utils";
-import {ThemeToggle} from "./blocks";
-import {VERSION, Router, HEADER_MENU, CANNY_APP_ID} from "../../../env";
+import {Dropdown} from "src/views/blocks";
+import {Button} from "src/views/blocks/Button";
+import {LocaleType} from "src/types";
+import {HEADER_MENU, CANNY_APP_ID} from "src/env";
+import {Header, ThemeToggle} from "./blocks";
 
 
 type Props = PropsWithChildren;
@@ -31,121 +17,74 @@ export const DashboardLayout: React.FC<Props> = (props) => {
         children
     } = props;
 
-    const theme = useTheme();
     const [t, i18n] = useTranslation();
 
-    // i18n.language
-    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    const [, setOpen] = useState(false);
+    const handleChangeLanguage = useCallback(async (locale: LocaleType) => {
+        await i18n.changeLanguage(locale);
 
-    const handleToggleMenu = useCallback(() => {
-        setOpen((open) => !open);
-    }, []);
-
-    const handleChangeLanguage = useCallback(async (e: SelectChangeEvent) => {
-        if(!e.target) {
-            return;
-        }
-
-        await i18n.changeLanguage(e.target.value);
-
-        localStorage.setItem("lang", e.target.value);
+        localStorage.setItem("lang", locale);
     }, [i18n]);
 
     return (
         <CannyProvider appId={CANNY_APP_ID} subdomain="kearisp">
-            <AppBar position="fixed">
-                <Toolbar>
-                    {isMobile && (
-                        <IconButton
-                          onClick={handleToggleMenu}>
-                            <MenuIcon />
-                        </IconButton>
-                    )}
+            <Header>
+                {HEADER_MENU.map((menuItem, index: number) => {
+                    return (
+                        <Button
+                          key={index}
+                          as={Link}
+                          className="uppercase"
+                          variant="secondary"
+                          to={menuItem.to}>
+                            {t(menuItem.label)}
+                        </Button>
+                    );
+                })}
 
-                    <img
-                      style={{
-                        marginRight: 8,
-                        height: 32
-                      }}
-                      alt="WS"
-                      src={asset("favicon-32x32.png")} />
+                <ThemeToggle />
 
-                    <Typography
-                      sx={{
-                        flexGrow: 0,
-                        display: {
-                            xs: "none",
-                            sm: "block"
-                        },
-                        mr: 2,
-                        fontWeight: 700,
-                        color: "inherit",
-                        textDecoration: "none"
-                      }}
-                      component={Link}
-                      variant="h6"
-                      noWrap
-                      to={Router.url("home")}>
-                        Wocker
-                    </Typography>
+                <Dropdown>
+                    <Dropdown.Trigger asChild>
+                        <Button
+                          className="pr-2 group"
+                          variant="outline">
+                            {t(LocaleType.label(i18n.language as LocaleType))}
 
-                    <Chip label={`v${VERSION}`} />
+                            <ChevronUp className="group-data-[state=open]:block group-data-[state=closed]:hidden size-4" />
+                            <ChevronDown className="group-data-[state=closed]:block group-data-[state=open]:hidden size-4" />
+                        </Button>
+                    </Dropdown.Trigger>
 
-                    <Grid sx={{flex: 1}} />
+                    <Dropdown.Content>
+                        {LocaleType.values().map((locale) => {
+                            return (
+                                <Dropdown.Item
+                                  key={locale}
+                                  onClick={() => handleChangeLanguage(locale)}>
+                                    {t(LocaleType.label(locale))}
+                                </Dropdown.Item>
+                            );
+                        })}
+                    </Dropdown.Content>
+                </Dropdown>
 
-                    {HEADER_MENU.map((menuItem, index: number) => {
-                        const {
-                            label,
-                            to
-                        } = menuItem;
+                <CannyChangelog
+                  component={Button}
+                  className="rounded-full"
+                  variant="outline"
+                  iconOnly
+                  align="right"
+                  labelIDs={[
+                    "68b09319a3f8e8017063a1d4"
+                  ]}
+                  position="bottom">
+                    <LucideBell />
+                </CannyChangelog>
+            </Header>
 
-                        return (
-                            <Button
-                              key={index}
-                              component={Link}
-                              variant="text"
-                              color="inherit"
-                              to={to}>
-                                {t(label as any)}
-                            </Button>
-                        );
-                    })}
-
-                    <ThemeToggle />
-
-                    <Select
-                      variant="outlined"
-                      size="small"
-                      value={i18n.language}
-                      onChange={handleChangeLanguage}>
-                        <MenuItem value="ua">Ukrainian</MenuItem>
-                        <MenuItem value="en">English</MenuItem>
-                    </Select>
-
-                    <CannyChangelog
-                      component={IconButton}
-                      align="right"
-                      labelIDs={[
-                        "68b09319a3f8e8017063a1d4"
-                      ]}
-                      position="bottom">
-                        <NotificationsIcon />
-                    </CannyChangelog>
-                </Toolbar>
-            </AppBar>
-
-            <Box sx={theme.mixins.toolbar} />
-
-            <Box
-              sx={{
-                "--wocker-header-height": "64px"
-              }}
-              display="flex">
-                <Box flex={1}>
-                    {children}
-                </Box>
-            </Box>
+            <main className="pt-[64px] min-h-full transition-all bg-background">
+                {children}
+            </main>
         </CannyProvider>
     );
 };

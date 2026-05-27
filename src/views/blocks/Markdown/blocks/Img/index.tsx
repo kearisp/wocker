@@ -1,7 +1,6 @@
 import React, {useMemo} from "react";
 import Path from "path-browserify";
-
-import {PUBLIC_PATH} from "../../../../../env";
+import {PUBLIC_PATH} from "src/env";
 
 
 type Props = {

@@ -1,6 +1,138 @@
 @use "tailwindcss";
+@source "../**/.ts";
+@source "../**/.tsx";
 
 html, body {
     width: 100%;
     height: 100%;
+    background: var(--color-background);
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-link: var(--link);
+    --color-link-hover: var(--link-hover);
+    --color-link-visited: var(--link-visited);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222 84% 5%);
+
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222 84% 5%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222 84% 5%);
+
+    --primary: hsl(222 47% 11%);
+    --primary-foreground: hsl(210 40% 98%);
+
+    --secondary: hsl(210 40% 96%);
+    --secondary-foreground: hsl(222 47% 11%);
+
+    --link: hsl(221 83% 53%);
+    --link-hover: hsl(221 83% 45%);
+    --link-visited: hsl(262 83% 58%);
+
+    --muted: hsl(210 40% 96%);
+    --muted-foreground: hsl(215 16% 47%);
+
+    --accent: oklch(97% 0 0);
+    --accent-foreground: oklch(20.5% 0 0);
+
+    --border: oklch(92.2% 0 0);
+    --ring: oklch(70.8% 0 0);
+
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(210 40% 98%);
+
+    --border: hsl(214 32% 91%);
+    --input: hsl(214 32% 91%);
+    --ring: hsl(222 84% 5%);
+
+    --radius: 0.5rem;
+
+    @keyframes ripple {
+        from {
+            transform: scale(0);
+            opacity: 1;
+        }
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .animate-ripple {
+        animation: ripple 600ms linear;
+    }
+}
+
+.dark {
+    --background: hsl(222 84% 5%);
+    --foreground: hsl(210 40% 98%);
+
+    --card: hsl(222 84% 5%);
+    --card-foreground: hsl(210 40% 98%);
+
+    --popover: hsl(222 84% 5%);
+    --popover-foreground: hsl(210 40% 98%);
+
+    --primary: hsl(210 40% 98%);
+    --primary-foreground: hsl(222 47% 11%);
+
+    --secondary: hsl(217 33% 18%);
+    --secondary-foreground: hsl(210 40% 98%);
+
+    --link: hsl(217 91% 70%);
+    --link-hover: hsl(217 91% 65%);
+    --link-visited: hsl(262 85% 72%);
+
+    --muted: hsl(217 33% 18%);
+    --muted-foreground: hsl(215 20% 65%);
+
+    --accent: hsl(217 33% 18%);
+    --accent-foreground: hsl(210 40% 98%);
+
+    --destructive: hsl(0 100% 60%);
+    --destructive-foreground: hsl(210 40% 98%);
+
+    --border: hsl(217 33% 18%);
+    --input: hsl(217 33% 18%);
+    --ring: hsl(213 27% 84%);
 }

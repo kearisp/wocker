@@ -1,24 +1,12 @@
 import React from "react";
-import {
-    Box,
-    CircularProgress
-} from "@mui/material";
+import {Loader2} from "lucide-react";
 
 
-const LoadingScreen: React.FC = () => {
+export const LoadingScreen: React.FC = () => {
     return (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%"
-          }}>
-            <CircularProgress
-              size={60} />
-        </Box>
+        <div className="flex justify-center items-center h-full">
+            <Loader2
+              className="w-12 h-12 animate-spin text-primary" />
+        </div>
     );
 };
-
-
-export {LoadingScreen};
