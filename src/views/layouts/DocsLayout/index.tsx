@@ -10,12 +10,12 @@ export const DocsLayout: React.FC<Props> = (props) => {
     } = props;
 
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 h-full">
             <div className="w-[220px] flex-basis-[220px] min-w-[220px]">
                 <Sidebar />
             </div>
 
-            <div className="flex-1">
+            <div className="flex-1 h-full">
                 {children}
             </div>
         </div>
