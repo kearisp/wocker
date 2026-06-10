@@ -82,7 +82,7 @@ export const DashboardLayout: React.FC<Props> = (props) => {
                 </CannyChangelog>
             </Header>
 
-            <main className="pt-[64px] min-h-full transition-all bg-background">
+            <main className="pt-[64px] h-full transition-all bg-background">
                 {children}
             </main>
         </CannyProvider>

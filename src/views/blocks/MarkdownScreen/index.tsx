@@ -3,8 +3,8 @@ import Path from "path-browserify";
 import {useTranslation} from "react-i18next";
 import {Markdown, titleToId} from "src/views/blocks/Markdown";
 import {TableOfContents} from "src/views/blocks/TableOfContents";
+import {LoadingScreen} from "src/views/blocks/LoadingScreen";
 import {PUBLIC_PATH} from "src/env";
-import styles from "./index.module.scss";
 
 
 type Heading = {
@@ -88,15 +88,21 @@ export const MarkdownScreen: React.FC<Props> = (props) => {
         })();
     }, [path, i18n.language]);
 
+    if(!text) {
+        return (
+            <LoadingScreen />
+        );
+    }
+
     return (
-        <div className={styles.container}>
-            <div className={styles.content}>
+        <div className="flex flex-col-reverse lg:flex-row">
+            <div className="flex-1">
                 <Markdown
                   content={text} />
             </div>
 
-            <div className={styles.tocWrapper}>
-                <div className={styles.toc}>
+            <div className="relative lg:basis-[240px]">
+                <div className="pt-4 pl-2 pr-2 pb-2 lg:sticky lg:top-[70px] lg:max-h-[calc(100vh-90px)] lg:overflow-y-auto">
                     <TableOfContents
                       headings={headings} />
                 </div>
