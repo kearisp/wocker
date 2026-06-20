@@ -36,7 +36,7 @@ export const Router = makeRouter({
     "docs.plugin.pgsql": "/docs/plugins/pgsql",
     "docs.plugin.redis": "/docs/plugins/redis",
     "docs.plugin.memcached": "/docs/plugins/memcached",
-    "docs.plugin.maildev": "/docs/plugins/maildev",
+    "docs.plugin.mail": "/docs/plugins/mail",
     "docs.plugin.storage": "/docs/plugins/storage",
     "docs.plugin.rproxy": "/docs/plugins/rproxy",
     "docs.plugin.ollama": "/docs/plugins/ollama",
@@ -160,8 +160,8 @@ export const MENU: MenuItem[] = [
                 to: Router.url("docs.plugin.memcached")
             },
             {
-                label: "menu.maildev",
-                to: Router.url("docs.plugin.maildev")
+                label: "menu.mail",
+                to: Router.url("docs.plugin.mail")
             },
             {
                 label: "menu.storage",
