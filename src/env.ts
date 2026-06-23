@@ -1,5 +1,5 @@
 import {isNewByDate} from "./utils";
-import {makeRouter} from "./utils/makeRouter";
+import {createRouter} from "./utils/createRouter";
 import {MenuItem} from "./types";
 
 
@@ -9,7 +9,7 @@ export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.
 
 export const CANNY_APP_ID = import.meta.env.REACT_APP_CANNY_APP_ID || "";
 
-export const Router = makeRouter({
+export const Router = createRouter({
     "home": "/",
     "blog": "/blog",
     "docs": "/docs",
