@@ -1,5 +1,5 @@
+import {createRouter} from "navigation-kit";
 import {isNewByDate} from "./utils";
-import {createRouter} from "./utils/createRouter";
 import {MenuItem} from "./types";
 
 
