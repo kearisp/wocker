@@ -47,6 +47,9 @@ export const App: React.FC = () => {
                           }>
                             <Route path={`${Router.url("docs")}/*`} element={<DocsPage />} />
                             <Route
+                              path={`/docs/plugins/maildev`}
+                              element={<Navigate replace to={Router.url("docs.plugin.mail")} />} />
+                            <Route
                               path={`/docs/plugins/ngrok`}
                               element={<Navigate replace to={Router.url("docs.plugin.rproxy")} />} />
                             <Route

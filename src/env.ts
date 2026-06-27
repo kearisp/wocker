@@ -1,5 +1,5 @@
+import {createRouter} from "navigation-kit";
 import {isNewByDate} from "./utils";
-import {makeRouter} from "./utils/makeRouter";
 import {MenuItem} from "./types";
 
 
@@ -9,7 +9,7 @@ export const PUBLIC_PATH = import.meta.env.PUBLIC_URL ? new URL(import.meta.env.
 
 export const CANNY_APP_ID = import.meta.env.REACT_APP_CANNY_APP_ID || "";
 
-export const Router = makeRouter({
+export const Router = createRouter({
     "home": "/",
     "blog": "/blog",
     "docs": "/docs",
@@ -36,7 +36,7 @@ export const Router = makeRouter({
     "docs.plugin.pgsql": "/docs/plugins/pgsql",
     "docs.plugin.redis": "/docs/plugins/redis",
     "docs.plugin.memcached": "/docs/plugins/memcached",
-    "docs.plugin.maildev": "/docs/plugins/maildev",
+    "docs.plugin.mail": "/docs/plugins/mail",
     "docs.plugin.storage": "/docs/plugins/storage",
     "docs.plugin.rproxy": "/docs/plugins/rproxy",
     "docs.plugin.ollama": "/docs/plugins/ollama",
@@ -160,8 +160,8 @@ export const MENU: MenuItem[] = [
                 to: Router.url("docs.plugin.memcached")
             },
             {
-                label: "menu.maildev",
-                to: Router.url("docs.plugin.maildev")
+                label: "menu.mail",
+                to: Router.url("docs.plugin.mail")
             },
             {
                 label: "menu.storage",

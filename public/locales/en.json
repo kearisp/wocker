@@ -32,7 +32,7 @@
         "redis": "Redis",
         "pgsql": "Postgres",
         "rproxy": "RProxy",
-        "maildev": "MailDev",
+        "mail": "Mail",
         "ssl": "SSL",
         "preset-node": "Node",
         "preset-php": "Php",
