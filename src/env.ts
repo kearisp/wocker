@@ -40,6 +40,7 @@ export const Router = createRouter({
     "docs.plugin.storage": "/docs/plugins/storage",
     "docs.plugin.rproxy": "/docs/plugins/rproxy",
     "docs.plugin.ollama": "/docs/plugins/ollama",
+    "docs.plugin.webdriver": "/docs/plugins/webdriver",
     "docs.plugin.custom": "/docs/plugins/custom"
 } as const);
 
@@ -177,6 +178,11 @@ export const MENU: MenuItem[] = [
                 label: "menu.ollama",
                 new: isNewByDate("2025-01-10"),
                 to: Router.url("docs.plugin.ollama")
+            },
+            {
+                label: "menu.webdriver",
+                new: isNewByDate("2026-08-01"),
+                to: Router.url("docs.plugin.webdriver")
             },
             {
                 label: "menu.custom-plugin",

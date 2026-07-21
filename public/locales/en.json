@@ -40,6 +40,7 @@
         "storage": "Storage",
         "mongodb": "Mongodb",
         "logs": "Logs",
-        "http-auth": "Http Auth"
+        "http-auth": "Http Auth",
+        "webdriver": "Webdriver"
     }
 }
