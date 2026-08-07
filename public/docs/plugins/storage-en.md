@@ -14,7 +14,7 @@ ws storage:destroy <name>
 ## Installation
 
 ```shell
-ws plugin:add storage
+ws plugin:install storage
 ```
 
 ## Creation

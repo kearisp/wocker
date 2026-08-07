@@ -19,7 +19,7 @@ ws ollama:run <name> [model]
 The following command installs the Ollama plugin:
 
 ```shell
-ws plugin:add ollama
+ws plugin:install ollama
 ```
 
 ## Creating a Service

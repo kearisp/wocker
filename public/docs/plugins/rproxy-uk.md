@@ -17,7 +17,7 @@ ws rproxy:logs
 ## Installation
 
 ```shell
-ws plugin:add rproxy
+ws plugin:install rproxy
 ```
 
 

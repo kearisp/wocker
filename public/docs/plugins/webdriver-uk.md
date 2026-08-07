@@ -23,7 +23,7 @@
 ## Інсталяція
 
 ```shell
-ws plugin:add webdriver
+ws plugin:install webdriver
 ```
 
 

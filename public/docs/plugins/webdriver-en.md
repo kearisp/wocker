@@ -23,7 +23,7 @@ browser-related dependency of their own either.
 ## Installation
 
 ```shell
-ws plugin:add webdriver
+ws plugin:install webdriver
 ```
 
 

@@ -17,7 +17,7 @@ ws mail:use [name]
 ## Інсталяція
 
 ```shell
-ws plugin:add mail
+ws plugin:install mail
 ```
 
 ## Швидкий старт

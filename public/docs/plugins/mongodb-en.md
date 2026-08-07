@@ -14,7 +14,7 @@ ws mongodb:stop [name]
 ## Installation
 
 ```shell
-ws plugin:add mongodb
+ws plugin:install mongodb
 ```
 
 ```hosts

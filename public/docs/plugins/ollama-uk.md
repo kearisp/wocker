@@ -19,7 +19,7 @@ ws ollama:run <name> [model]
 Наступна команда встановлює плагін Ollama:
 
 ```shell
-ws plugin:add ollama
+ws plugin:install ollama
 ```
 
 ## Створення сервісу
