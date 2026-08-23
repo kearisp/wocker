@@ -17,7 +17,7 @@ Manage mail-catching services (MailDev or MailHog) in your Wocker workspace: cre
 ## Installation
 
 ```shell
-ws plugin:add mail
+ws plugin:install mail
 ```
 
 ## Quick start

@@ -4,7 +4,7 @@
 ## Installation
 
 ```shell
-ws plugin:add cron
+ws plugin:install cron
 ```
 
 

@@ -148,7 +148,15 @@ export const LiquidEther: React.FC<LiquidEtherProps> = (props: LiquidEtherProps)
                 this.container = container;
                 this.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
                 this.resize();
-                this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+
+                try {
+                    this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+                }
+                catch(err) {
+                    console.warn('LiquidEther: WebGL unavailable, skipping effect', err);
+                    return;
+                }
+
                 // Always transparent
                 this.renderer.autoClear = false;
                 this.renderer.setClearColor(new THREE.Color(0x000000), 0);
@@ -1055,14 +1063,20 @@ export const LiquidEther: React.FC<LiquidEtherProps> = (props: LiquidEtherProps)
 
             resize() {
                 Common.resize();
-                this.output.resize();
+
+                if(this.output)
+                    this.output.resize();
             }
 
             render() {
-                if(this.autoDriver) this.autoDriver.update();
+                if(this.autoDriver)
+                    this.autoDriver.update();
+
                 Mouse.update();
                 Common.update();
-                this.output.update();
+
+                if(this.output)
+                    this.output.update();
             }
 
             loop() {

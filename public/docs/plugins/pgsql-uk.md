@@ -22,7 +22,7 @@ ws pgsql:restore [service] [-d <database>] [-f <filename>]
 ## Інсталяція
 
 ```shell
-ws plugin:add pgsql
+ws plugin:install pgsql
 ```
 
 ## Швидкий старт

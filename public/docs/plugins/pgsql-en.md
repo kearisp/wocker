@@ -22,7 +22,7 @@ Manage PostgreSQL services in your Wocker workspace: create, start/stop, set def
 ## Installation
 
 ```shell
-ws plugin:add pgsql
+ws plugin:install pgsql
 ```
 
 ## Quick start

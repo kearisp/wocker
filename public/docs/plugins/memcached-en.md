@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-ws plugin:add memcached
+ws plugin:install memcached
 ```
 
 ## Commands
