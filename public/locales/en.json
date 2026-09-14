@@ -41,6 +41,7 @@
         "mongodb": "Mongodb",
         "logs": "Logs",
         "http-auth": "Http Auth",
+        "mount-permissions": "Mount Permissions",
         "webdriver": "Webdriver"
     }
 }

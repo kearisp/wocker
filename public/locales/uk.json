@@ -27,6 +27,7 @@
         "projects": "Проєкти",
         "logs": "Логування",
         "mail": "Mail",
+        "mount-permissions": "Mount Permissions",
         "webdriver": "Webdriver"
     }
 }
