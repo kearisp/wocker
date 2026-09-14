@@ -24,6 +24,7 @@ export const Router = createRouter({
     "docs.project.ssl": "/docs/project/ssl",
     "docs.project.logs": "/docs/project/logs",
     "docs.project.http-auth": "/docs/project/http-auth",
+    "docs.project.mount-permissions": "/docs/project/mount-permissions",
     "docs.preset": "/docs/presets",
     "docs.preset.php": "/docs/presets/php",
     "docs.preset.node": "/docs/presets/node",
@@ -99,6 +100,11 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.http-auth",
                 to: Router.url("docs.project.http-auth")
+            },
+            {
+                label: "menu.mount-permissions",
+                to: Router.url("docs.project.mount-permissions"),
+                new: isNewByDate("2026-10-15")
             },
             {
                 label: "menu.logs",
