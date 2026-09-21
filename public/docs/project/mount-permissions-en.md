@@ -97,11 +97,20 @@ ws mount:allow [path]
 - Adding an allow entry removes any matching deny entry for the same path.
 - If the resolved path is a [sensitive path](#sensitive-paths), you must retype it to confirm, same as the `ws init` flow above.
 
+Remove a path from the allow list:
+
+```shell
+ws mount:allow [path] --remove
+```
+
+- `-r, --remove` — remove `path` from the allow list instead of adding it. `path` is required; omitting it throws `Path is required to remove a mount permission`. Removing a path that isn't currently allowed is a silent no-op. No sensitive-path confirmation is required for removal.
+
 Examples:
 
 ```shell
 ws mount:allow ~/projects
 ws mount:allow /var/data
+ws mount:allow ~/projects --remove
 ```
 
 ### mount:deny
@@ -124,10 +133,19 @@ ws mount:deny [path]
 - Adding a deny entry removes any matching allow entry for the same path.
 - No confirmation is required, even for sensitive paths.
 
+Remove a path from the deny list:
+
+```shell
+ws mount:deny [path] --remove
+```
+
+- `-r, --remove` — remove `path` from the deny list instead of adding it. `path` is required; omitting it throws `Path is required to remove a mount permission`. Removing a path that isn't currently denied is a silent no-op.
+
 Examples:
 
 ```shell
 ws mount:deny ~/projects/secrets
+ws mount:deny ~/projects/secrets --remove
 ```
 
 ## Editing the config directly
