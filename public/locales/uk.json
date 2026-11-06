@@ -12,6 +12,7 @@
         "blog": "Блог",
         "docs": "Docs",
         "build-args": "Build Args",
+        "build-files": "Файли збірки",
         "config": "Конфігурація",
         "custom-plugin": "Створення",
         "domains": "Домени",

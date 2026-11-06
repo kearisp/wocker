@@ -19,6 +19,7 @@ export const Router = createRouter({
     "docs.project.init": "/docs/project/init",
     "docs.project.management": "/docs/project/management",
     "docs.project.build-args": "/docs/project/build-args",
+    "docs.project.build-files": "/docs/project/build-files",
     "docs.project.env": "/docs/project/env",
     "docs.project.domains": "/docs/project/domains",
     "docs.project.ssl": "/docs/project/ssl",
@@ -84,6 +85,10 @@ export const MENU: MenuItem[] = [
             {
                 label: "menu.build-args",
                 to: Router.url("docs.project.build-args")
+            },
+            {
+                label: "menu.build-files",
+                to: Router.url("docs.project.build-files")
             },
             {
                 label: "menu.env",
